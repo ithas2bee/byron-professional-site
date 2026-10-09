@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact | Byron David Lencrerot III" description="Contact Byron David Lencrerot III for professional, academic, and project-related inquiries.">
+  <div class="inner-page">
+    <p class="kicker">06 / CONTACT</p>
+    <h1 class="page-heading">Start a<br /><span>conversation.</span></h1>
+    <p class="page-lede">For professional opportunities, academic connections, software projects, or conversations about technology and education, you can reach me directly by email or connect with me on LinkedIn.</p>
+    <div class="page-rule"></div>
+    <div class="card-grid">
+      <article class="info-card"><p class="kicker">EMAIL</p><h3>Direct contact</h3><p>Send a message about professional opportunities, collaboration, or other relevant inquiries.</p><a class="action-link" href="mailto:lencrerotl0@gmail.com">lencrerotl0@gmail.com <span>↗</span></a></article>
+      <article class="info-card"><p class="kicker">LINKEDIN</p><h3>Professional network</h3><p>Connect or view my professional background and career history.</p><a class="action-link" href="https://www.linkedin.com/in/byron-lencrerot-mism-340437147/" target="_blank" rel="noreferrer">View LinkedIn profile <span>↗</span></a></article>
+    </div>
+    <div class="page-rule"></div>
+    <div class="content-grid"><div class="side-label">GOOD REASONS TO CONNECT</div><div class="prose"><h2>Professional and academic conversations</h2><p>I'm interested in connecting with people around software engineering, independent software projects, information technology, doctoral study, computing education, and practical ways to explain technical ideas.</p><p>Whether you're reaching out about professional opportunities, a project, an academic connection, or educational content, email is the most direct way to contact me. LinkedIn is also available for professional networking and background.</p></div></div>
+  </div>
+</BaseLayout>
+<style>
+  .inner-page{width:min(1120px,calc(100% - 72px));margin:0 auto;padding:72px 0 100px;color:#191b1f}
+  .kicker{font-size:.66rem;letter-spacing:.16em;font-weight:700;color:#737880;margin:0 0 22px}
+  .page-heading{font-size:clamp(3rem,7vw,6.5rem);line-height:.94;letter-spacing:-.075em;font-weight:650;margin:0 0 28px;max-width:950px}
+  .page-heading span{color:#8a8f96}
+  .page-lede{font-size:1.08rem;line-height:1.8;color:#5e636b;max-width:760px;margin:0}
+  .page-rule{height:1px;background:#d9dce0;margin:44px 0}
+  .content-grid{display:grid;grid-template-columns:220px 1fr;gap:50px}
+  .side-label{font-size:.65rem;font-weight:700;letter-spacing:.13em;color:#7c8188}
+  .prose h2{font-size:1.55rem;letter-spacing:-.04em;margin:0 0 15px}
+  .prose p,.prose li{font-size:.93rem;line-height:1.9;color:#5d626a}
+  .prose p{margin:0 0 17px}.prose ul{padding-left:21px;margin:0 0 25px}
+  .info-card{border:1px solid #d9dce0;padding:24px;background:#fff}
+  .info-card h3{margin:0 0 10px;font-size:1.05rem;letter-spacing:-.02em}.info-card p{margin:0;color:#646971;font-size:.85rem;line-height:1.8}
+  .card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.tag{border:1px solid #d5d8dc;padding:7px 10px;font-size:.67rem;font-weight:700;color:#5f646b}
+  .black-panel{background:#111214;color:#fff;padding:28px}.black-panel p{color:#c2c5ca}
+  .timeline{border-top:1px solid #d9dce0}.timeline-item{display:grid;grid-template-columns:160px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid #d9dce0}.timeline-date{font-size:.7rem;letter-spacing:.08em;color:#777c83;font-weight:700}.timeline-item h3{margin:0 0 8px;font-size:1.2rem}.timeline-item p{margin:0;color:#626770;line-height:1.8;font-size:.87rem}
+  .action-link{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:13px 16px;background:#111214;color:#fff;text-decoration:none;font-size:.76rem;font-weight:700}.action-link:hover{background:#36393e}
+  @media(max-width:700px){.inner-page{width:calc(100% - 36px);padding:48px 0 70px}.content-grid{grid-template-columns:1fr;gap:16px}.card-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:9px}.page-lede{font-size:.98rem}}
+
+  .inner-page{background-image:radial-gradient(circle at 86% 18%,rgba(27,35,43,.92) 0,rgba(27,35,43,.72) 12%,rgba(245,246,247,0) 32%),linear-gradient(90deg,#f5f6f7 0%,rgba(245,246,247,.98) 58%,rgba(245,246,247,.25) 100%);background-size:100% 430px,100% 430px;background-position:top right;background-repeat:no-repeat}
+  .card-grid .info-card{min-height:210px;border-top:2px solid #111315}
+  .card-grid .action-link{overflow-wrap:anywhere}
+
+</style>

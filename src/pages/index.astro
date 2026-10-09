@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    number: '01',
+    name: 'PresiCompare',
+    type: 'LIVE PRODUCT',
+    description: 'An independent web application. Explore the product and its approach to presenting comparisons through a public-facing experience.',
+    technologies: 'Web application / Product development',
+    href: 'https://presicompare.com/',
+    action: 'Open live product'
+  },
+  {
+    number: '02',
+    name: 'Huddle Up',
+    type: 'MOBILE APPLICATION',
+    description: 'A mobile application developed with React Native and Expo, backed by an ASP.NET Core API.',
+    technologies: 'React Native / Expo / ASP.NET Core',
+    href: '#contact',
+    action: 'Project details'
+  }
+];
+---
+<BaseLayout
+  title="Byron David Lencrerot III | Software Engineer, Doctoral Student"
+  description="Professional profile, software projects, and academic interests of Byron David Lencrerot III."
+>
+  <section class="hero page-width">
+    <div class="hero-photo" aria-hidden="true"></div>
+    <div class="hero-main">
+      <p class="eyebrow"><span class="eyebrow-rule"></span> PERSONAL PROFESSIONAL PROFILE <span class="eyebrow-number">01 / 04</span></p>
+      <h1>Byron David<br />Lencrerot <span>III</span></h1>
+      <div class="hero-bottom">
+        <p class="hero-role">Software Engineer<br /><span>Doctoral Student · Aspiring Educator</span></p>
+        <div class="hero-intro">
+          <p>Engineering practical software. Studying technology at the doctoral level. Preparing to share industry knowledge through computing education.</p>
+          <div class="hero-links">
+            <a class="button button-black" href="#projects">View My Work <span>↗</span></a>
+            <a class="underlined-link" href="https://www.linkedin.com/in/byron-lencrerot-mism-340437147/" target="_blank" rel="noreferrer">Professional Profile ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <div class="aside-top"><span>BL / PROFILE</span><span>2026</span></div>
+      <div class="identity-art" aria-hidden="true">
+        <div class="identity-ring ring-one"></div>
+        <div class="identity-ring ring-two"></div>
+        <div class="identity-letter">B<span>.</span></div>
+        <div class="identity-coordinates">ENGINEERING<br />INFORMATION<br />EDUCATION</div>
+      </div>
+      <div class="aside-bottom"><span>GEORGIA, USA</span><span>INDEPENDENT PRACTICE</span></div>
+    </aside>
+  </section>
+
+  <section class="metrics-band">
+    <div class="page-width metrics-grid">
+      <div class="metric"><span class="metric-index">01</span><div><small>PROFESSIONAL FIELD</small><strong>Software Engineering</strong></div></div>
+      <div class="metric"><span class="metric-index">02</span><div><small>GRADUATE DEGREE</small><strong>M.S. · GPA 4.0</strong></div></div>
+      <div class="metric"><span class="metric-index">03</span><div><small>CURRENT PURSUIT</small><strong>Doctor of Information Technology</strong></div></div>
+      <div class="metric"><span class="metric-index">04</span><div><small>INDEPENDENT WORK</small><strong>Web &amp; Mobile Products</strong></div></div>
+    </div>
+  </section>
+
+  <section id="about" class="content-section page-width">
+    <div class="section-rail"><span>01</span><span>PROFILE</span><span class="rail-line"></span></div>
+    <div class="section-content">
+      <div class="section-title-row">
+        <h2>Experience shaped<br /><span>by practice.</span></h2>
+        <p class="section-deck">A professional path from hands-on technology services to enterprise software development, supported by continued academic study.</p>
+      </div>
+      <div class="bio-columns">
+        <p>My work in software development involves enterprise applications, database systems, data integration, troubleshooting, and production support. Before moving into software development, I built a foundation in customer-facing telecommunications technology.</p>
+        <p>I am pursuing a Doctor of Information Technology while preparing for a future in computing education. This site documents my professional work, independent software projects, academic interests, and educational resources as they grow.</p>
+      </div>
+      <div class="bio-footer"><span>PROFESSIONAL EXPERIENCE / COMCAST</span><span>SOFTWARE DEVELOPMENT SINCE 2023</span></div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <div class="page-width content-section projects-content">
+      <div class="section-rail"><span>02</span><span>SELECTED WORK</span><span class="rail-line"></span></div>
+      <div class="section-content">
+        <div class="section-title-row">
+          <h2>Products, not<br /><span>just concepts.</span></h2>
+          <p class="section-deck">Independent software work presented through product context and engineering choices. Source repositories remain private.</p>
+        </div>
+        <div class="project-list">
+          {projects.map((project) => (
+            <article class="project-row">
+              <div class="project-number">{project.number}</div>
+              <div class="project-info">
+                <p class="project-type">{project.type}</p>
+                <h3>{project.name}</h3>
+                <p class="project-description">{project.description}</p>
+                <p class="project-tech">{project.technologies}</p>
+                <a class="project-link" href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}>{project.action} <span>↗</span></a>
+              </div>
+              <div class:list={['project-art', project.number === '01' ? 'art-presi' : 'art-huddle']} aria-hidden="true">
+                {project.number === '01' ? (
+                  <div class="browser-art"><div class="browser-top"><span></span><span></span><span></span><b>PRESICOMPARE</b></div><div class="browser-body"><div class="browser-title"></div><div class="browser-panels"><i></i><i></i></div><div class="browser-lines"><i></i><i></i><i></i></div></div></div>
+                ) : (
+                  <div class="phone-art"><div class="phone-top"></div><div class="phone-wordmark">huddle.</div><div class="phone-heading"></div><div class="phone-item"><i></i><span></span></div><div class="phone-item"><i></i><span></span></div><div class="phone-item"><i></i><span></span></div><div class="phone-bottom"><i></i><i></i><i></i></div></div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="academia" class="content-section page-width">
+    <div class="section-rail"><span>03</span><span>ACADEMIA</span><span class="rail-line"></span></div>
+    <div class="section-content">
+      <div class="section-title-row">
+        <h2>Applied knowledge.<br /><span>Shared forward.</span></h2>
+        <p class="section-deck">A developing academic profile grounded in professional practice and a commitment to making computing concepts accessible.</p>
+      </div>
+      <div class="academic-grid">
+        <article><span class="card-index">A / EDUCATION</span><h3>Doctoral study</h3><p>Doctor of Information Technology, Capella University. In progress, with expected completion in 2028.</p><span class="card-foot">RESEARCH &amp; CONTINUED LEARNING</span></article>
+        <article><span class="card-index">B / TEACHING</span><h3>Computing education</h3><p>Interests include software development, programming, database systems, software engineering, systems analysis, and applied computing.</p><span class="card-foot">FUTURE TEACHING DIRECTION</span></article>
+        <article><span class="card-index">C / PUBLIC KNOWLEDGE</span><h3>Lectures &amp; writing</h3><p>A future home for technical explainers, educational videos, teaching resources, and scholarly work as they are developed.</p><span class="card-foot">CONTENT TO COME</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="education-strip">
+    <div class="page-width education-inner">
+      <div><span>EDUCATION</span><strong>M.S. Information Systems Management</strong><small>University of Arizona Global Campus · 4.0 GPA</small></div>
+      <div><span>UNDERGRADUATE HONORS</span><strong>B.S. Information Technology</strong><small>Magna Cum Laude · Dean's List</small></div>
+      <div><span>CONTACT</span><strong>Professional connections</strong><small><a href="mailto:lencrerotl0@gmail.com">lencrerotl0@gmail.com ↗</a></small></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  :global(:root){--black:#101214;--ink:#17191c;--mid:#646a71;--silver:#9ba1a8;--line:#d7dade;--mist:#f4f5f6;--white:#fff}
+  .page-width{width:min(1380px,calc(100% - 80px));margin-inline:auto}
+  .hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.7fr);gap:clamp(28px,5vw,78px);padding-top:clamp(55px,6vw,86px);padding-bottom:clamp(48px,5vw,72px);align-items:center;min-height:510px;overflow:hidden}
+  .hero-photo{position:absolute;z-index:-2;top:0;bottom:0;left:33%;right:-40px;background-image:linear-gradient(90deg,#f4f5f6 0%,rgba(244,245,246,.92) 7%,rgba(244,245,246,.28) 35%,rgba(16,18,20,.1) 70%,rgba(16,18,20,.32) 100%),url('/images/engineering-workspace.png');background-size:cover;background-position:center 55%}
+  .hero-main{position:relative;z-index:1;min-width:0}
+  .eyebrow,.section-rail,.aside-top,.aside-bottom,.metric small,.project-type,.project-tech,.card-index,.card-foot,.education-inner>div>span{font-size:.62rem;letter-spacing:.14em;font-weight:700}
+  .eyebrow{color:#4d545b;display:flex;align-items:center;gap:10px;margin:0 0 30px}
+  .eyebrow-rule{width:28px;height:2px;background:#17191c}
+  .eyebrow-number{margin-left:auto;color:#777e86}
+  h1{font-size:clamp(3.8rem,7.4vw,7.4rem);letter-spacing:-.078em;line-height:.88;font-weight:750;margin:0 0 27px;color:#101214;max-width:850px}
+  h1 span{color:#90959b}
+  .hero-bottom{display:grid;grid-template-columns:.72fr 1fr;gap:30px;border-top:1px solid #c9cdd1;padding-top:22px;max-width:850px}
+  .hero-role{font-size:.92rem;line-height:1.6;font-weight:750;margin:0;color:#15171a}
+  .hero-role span{color:#656b72;font-size:.78rem;font-weight:450}
+  .hero-intro>p{color:#4f565e;font-size:.92rem;line-height:1.75;margin:0 0 20px;max-width:490px}
+  .hero-links{display:flex;align-items:center;flex-wrap:wrap;gap:24px}
+  .button{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;padding:14px 17px;text-decoration:none;font-size:.76rem;font-weight:750}
+  .button-black{background:#101214;border:1px solid #101214;color:#fff;box-shadow:0 8px 20px #11131518}
+  .button-black:hover{background:#33383d}
+  .underlined-link,.project-link{font-size:.76rem;font-weight:750;text-decoration:none;border-bottom:1px solid #777e85;padding-bottom:5px}
+  .hero-aside{position:relative;z-index:1;background:rgba(248,249,250,.94);border:1px solid rgba(255,255,255,.85);box-shadow:0 24px 70px #11131530;min-height:390px;padding:20px 20px 17px;display:flex;flex-direction:column;justify-content:space-between;backdrop-filter:blur(8px)}
+  .aside-top,.aside-bottom{display:flex;justify-content:space-between;color:#626a72;font-size:.57rem}
+  .identity-art{position:relative;flex:1;min-height:265px;display:grid;place-items:center;overflow:hidden}
+  .identity-ring{position:absolute;width:76%;height:68%;border:1px solid #c6cbd0;border-radius:50%;transform:rotate(-12deg)}
+  .identity-ring.ring-two{width:61%;height:82%;transform:rotate(28deg);border-color:#d8dce0}
+  .identity-letter{font-size:clamp(7rem,11vw,10rem);line-height:1;font-weight:800;letter-spacing:-.1em;color:#101214;z-index:1}
+  .identity-letter span{color:#9aa0a7}
+  .identity-coordinates{align-self:end;justify-self:start;font-size:.55rem;line-height:1.8;letter-spacing:.16em;color:#606871}
+  .aside-bottom{border-top:1px solid #cdd1d5;padding-top:14px;margin-top:14px}
+  .metrics-band{background:#101214;color:#fff;border-top:1px solid #353a40;border-bottom:1px solid #353a40}
+  .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .metric{display:flex;align-items:flex-start;gap:18px;padding:25px 22px;border-right:1px solid #353a40;min-height:94px}
+  .metric:first-child{padding-left:0}.metric:last-child{border-right:0;padding-right:0}
+  .metric small{display:block;color:#a7afb7;font-size:.56rem;margin-bottom:8px}
+  .metric strong{display:block;color:#f6f7f8;font-size:.85rem;line-height:1.4}
+  .metric-index{font-size:.66rem;color:#a2aab2;padding-top:2px}
+  .content-section{display:grid;grid-template-columns:150px minmax(0,1fr);gap:30px;padding-top:clamp(64px,7vw,104px);padding-bottom:clamp(64px,7vw,104px)}
+  .section-rail{display:flex;align-items:center;gap:10px;color:#515a63;padding-top:10px;white-space:nowrap}
+  .section-rail .rail-line{height:1px;background:#c5cbd0;flex:1;min-width:12px}
+  .section-content{min-width:0}
+  .section-title-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.75fr);gap:48px;align-items:end;margin-bottom:36px}
+  .section-title-row h2{font-size:clamp(3.2rem,6vw,6rem);line-height:.91;letter-spacing:-.075em;font-weight:750;margin:0;color:#111315}
+  .section-title-row h2 span{color:#92979d}
+  .section-deck{color:#535b63;font-size:.94rem;line-height:1.8;max-width:480px;margin:0 0 5px}
+  .bio-columns{display:grid;grid-template-columns:1fr 1fr;gap:35px;color:#4f565e;font-size:.92rem;line-height:1.8}
+  .bio-columns p{margin:0}
+  .bio-footer{border-top:1px solid #cbd0d4;margin-top:28px;padding-top:14px;display:flex;justify-content:space-between;gap:15px;color:#717981;font-size:.56rem;letter-spacing:.13em;font-weight:700}
+  .projects-section{background:#eceef0;border-top:1px solid #d5d9dd;border-bottom:1px solid #d5d9dd}
+  .project-row{display:grid;grid-template-columns:38px minmax(250px,.85fr) minmax(300px,1fr);gap:25px;align-items:center;padding:28px 0;border-top:1px solid #c4cbd1}
+  .project-number{font-size:.72rem;color:#69737d;padding-top:4px;align-self:start}
+  .project-type{color:#707982;font-size:.56rem;margin:0 0 10px}
+  .project-info h3{font-size:1.65rem;letter-spacing:-.045em;margin:0 0 10px;color:#111315}
+  .project-description{color:#4e565e;font-size:.88rem;line-height:1.7;margin:0 0 12px;max-width:470px}
+  .project-tech{color:#626b74;font-size:.57rem;margin:0 0 17px}
+  .project-link{display:inline-flex;gap:20px;color:#17191c}
+  .project-art{height:245px;border:1px solid #c5cbd1;background:linear-gradient(145deg,#f9fafb,#dce1e5);display:grid;place-items:center;overflow:hidden}
+  .art-presi{background:linear-gradient(135deg,#11161c,#28313b 60%,#e3e6e9)}
+  .browser-art{width:78%;height:75%;background:#f9fafb;box-shadow:0 20px 40px #0004;border:5px solid #15191e;border-radius:5px;overflow:hidden}
+  .browser-top{height:26px;background:#e4e7ea;display:flex;align-items:center;gap:5px;padding:0 8px;font-size:.45rem;color:#252a30;letter-spacing:.12em}
+  .browser-top span{width:5px;height:5px;border-radius:50%;background:#858d95}.browser-top b{margin-left:auto}
+  .browser-body{padding:18px}.browser-title{width:55%;height:10px;background:#242a30;margin-bottom:17px}.browser-panels{display:grid;grid-template-columns:1fr 1fr;gap:9px}.browser-panels i{height:48px;background:linear-gradient(135deg,#d8dde2,#aab3bc);border:1px solid #c7cdd2}.browser-lines{display:grid;gap:7px;margin-top:13px}.browser-lines i{height:4px;background:#d4d9de;width:90%}.browser-lines i:nth-child(2){width:75%}.browser-lines i:nth-child(3){width:84%}
+  .art-huddle{background:radial-gradient(circle at 50% 20%,#66727f,#1b2026 70%)}
+  .phone-art{height:91%;aspect-ratio:9/16;background:#f8f9fa;border:5px solid #111519;border-radius:20px;padding:18px 10px 10px;box-shadow:0 18px 40px #0005;position:relative}
+  .phone-top{position:absolute;top:5px;left:50%;transform:translateX(-50%);width:35%;height:5px;background:#111519;border-radius:5px}.phone-wordmark{font-size:.72rem;font-weight:800;letter-spacing:-.05em;color:#161a1e;margin:7px 0 15px}.phone-heading{width:85%;height:7px;background:#aab2bb;margin-bottom:10px}.phone-item{height:32px;border:1px solid #d6dbe0;margin-bottom:7px;display:flex;align-items:center;gap:7px;padding:5px}.phone-item i{width:13px;height:13px;background:#8b96a1;border-radius:3px}.phone-item span{height:4px;background:#d1d6db;flex:1}.phone-bottom{position:absolute;bottom:7px;left:15px;right:15px;display:flex;justify-content:space-around}.phone-bottom i{width:8px;height:8px;border-radius:50%;background:#8a949e}
+  .academic-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #cbd0d5}
+  .academic-grid article{padding:24px 22px;min-height:210px;border-right:1px solid #cbd0d5;display:flex;flex-direction:column}.academic-grid article:last-child{border-right:0}
+  .card-index{color:#6c7580;font-size:.56rem}.academic-grid h3{font-size:1.05rem;letter-spacing:-.02em;margin:23px 0 9px;color:#17191c}.academic-grid p{font-size:.82rem;line-height:1.7;color:#58616a;margin:0 0 22px}.card-foot{color:#7a838c;font-size:.52rem;margin-top:auto}
+  .education-strip{background:#101214;color:#fff;border-top:1px solid #353a40}
+  .education-inner{display:grid;grid-template-columns:repeat(3,1fr);padding-top:28px;padding-bottom:28px;gap:24px}
+  .education-inner>div{display:flex;flex-direction:column;gap:7px;padding-right:20px;border-right:1px solid #383d43}.education-inner>div:last-child{border:0}.education-inner>div>span{color:#9da6af;font-size:.55rem}.education-inner strong{font-size:.84rem}.education-inner small{font-size:.75rem;color:#bdc4cb}.education-inner a{text-decoration:none}
+  @media(max-width:1050px){.page-width{width:calc(100% - 48px)}.hero{grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr);gap:24px}.hero-photo{left:27%;opacity:.8}.hero-bottom{grid-template-columns:1fr;gap:16px}.content-section{grid-template-columns:100px minmax(0,1fr);gap:20px}.section-title-row{gap:28px}.project-row{grid-template-columns:28px minmax(220px,.9fr) minmax(230px,1fr);gap:17px}}
+  @media(max-width:760px){.page-width{width:calc(100% - 36px)}.hero{grid-template-columns:1fr;padding-top:44px;padding-bottom:38px;gap:25px}.hero-photo{left:0;right:0;opacity:.32;background-image:linear-gradient(90deg,#f4f5f6 0%,rgba(244,245,246,.75) 65%,rgba(244,245,246,.5) 100%),url('/images/engineering-workspace.png')}.eyebrow{font-size:.55rem;margin-bottom:22px}.eyebrow-number{display:none}h1{font-size:clamp(3.5rem,14vw,5.5rem);margin-bottom:24px}.hero-bottom{grid-template-columns:1fr;gap:14px}.hero-aside{min-height:260px;max-width:100%}.identity-art{min-height:170px}.identity-letter{font-size:7rem}.metrics-grid{grid-template-columns:1fr 1fr}.metric{padding:17px 12px;min-height:85px}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid #353a40}.metric:first-child{padding-left:12px}.metric strong{font-size:.75rem}.content-section{grid-template-columns:1fr;gap:18px;padding-top:52px;padding-bottom:56px}.section-rail{padding-top:0}.section-title-row{grid-template-columns:1fr;gap:18px;margin-bottom:26px}.section-title-row h2{font-size:clamp(3rem,12vw,4.5rem)}.section-deck{font-size:.88rem}.bio-columns{grid-template-columns:1fr;gap:14px}.bio-footer{flex-direction:column}.project-row{grid-template-columns:25px 1fr;gap:12px;padding:22px 0}.project-info{grid-column:2}.project-art{grid-column:2;grid-row:3;height:210px}.academic-grid{grid-template-columns:1fr}.academic-grid article{border-right:0;border-bottom:1px solid #cbd0d5;min-height:auto}.academic-grid article:last-child{border-bottom:0}.card-index{margin-bottom:0}.education-inner{grid-template-columns:1fr;gap:18px}.education-inner>div,.education-inner>div+div{padding:0 0 15px;border-right:0;border-bottom:1px solid #383d43}.education-inner>div:last-child{border:0;padding-bottom:0}}
+</style>

@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="About | Byron David Lencrerot III" description="Learn about Byron David Lencrerot III, a software engineer, Doctor of Information Technology student, and aspiring educator.">
+  <div class="inner-page">
+    <p class="kicker">01 / ABOUT BYRON</p>
+    <h1 class="page-heading">Building technology.<br /><span>Continuing to learn.</span></h1>
+    <p class="page-lede">I am a software engineer, Doctor of Information Technology student, and aspiring educator. My path has taken me from hands-on telecommunications service to enterprise software development, with independent software projects connecting my technical work and long-term academic interests.</p>
+
+    <section class="intro-grid" aria-label="Professional overview">
+      <div class="intro-number"><span>01</span><small>MY APPROACH</small></div>
+      <div class="intro-copy">
+        <h2>Practical experience, applied learning, and purposeful engineering.</h2>
+        <p>My career began at Comcast in installation and service, where I advanced through CT1, CT2, CT3, and CT4 roles. The work grew from residential internet and TV service into phone-service troubleshooting and complex installations for business customers. That progression gave me experience with technical problem-solving in real operating environments and an appreciation for the people who rely on technology every day.</p>
+        <p>In June 2023, I moved into software development at Comcast. My role involves designing and developing applications with C# and ASP.NET, contributing to technical infrastructure and customer experience. My broader technical work includes SQL Server environments, data integration, debugging, production support, and technical documentation.</p>
+        <p>I approach software as more than code alone. Reliable applications depend on understanding the problem, the data, the surrounding systems, and the people who use the result.</p>
+      </div>
+    </section>
+
+    <div class="page-rule"></div>
+
+    <section class="content-grid">
+      <div class="side-label">CAREER PATH</div>
+      <div class="career-path">
+        <article class="career-stage">
+          <div class="stage-meta"><span>2014 - 2023</span><span>TELECOMMUNICATIONS</span></div>
+          <h2>Learning technology in the field</h2>
+          <p>At Comcast, I progressed through four technician levels: CT1, CT2, CT3, and CT4. Each step expanded my responsibilities, from foundational residential internet and TV installation and service, to independent service work, CDV/phone troubleshooting, and advanced installations for business clients.</p>
+        </article>
+        <article class="career-stage">
+          <div class="stage-meta"><span>2023 - PRESENT</span><span>SOFTWARE DEVELOPMENT</span></div>
+          <h2>Building and supporting enterprise applications</h2>
+          <p>As an Engineer 1, Software Development, I work with C# and ASP.NET to develop applications and contribute to Comcast's technical infrastructure. My work also draws on database technologies, integration processes, troubleshooting, and production support.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="page-rule"></div>
+
+    <section class="content-grid">
+      <div class="side-label">ACADEMIC JOURNEY</div>
+      <div class="academic-block">
+        <p class="section-eyebrow">LEARNING WITH INTENTION</p>
+        <h2>From technical practice to deeper study.</h2>
+        <p>Education has been an important part of my professional development. I earned a Bachelor of Science in Information Technology, graduating magna cum laude and making the Dean's List, followed by a Master of Science in Information Systems Management with a 4.0 GPA.</p>
+        <p>I am now pursuing a Doctor of Information Technology at Capella University. My doctoral studies are part of a longer-term goal to keep growing as a technology professional and prepare for a future that includes teaching and helping others understand computing and information systems.</p>
+        <div class="degree-grid">
+          <article class="degree-card"><span class="degree-year">IN PROGRESS</span><h3>Doctor of Information Technology</h3><p>Capella University</p><small>Expected November 2028</small></article>
+          <article class="degree-card"><span class="degree-year">2025</span><h3>Master of Science</h3><p>Information Systems Management · University of Arizona Global Campus</p><small>GPA: 4.0</small></article>
+          <article class="degree-card"><span class="degree-year">2024</span><h3>Bachelor of Science</h3><p>Information Technology · University of Arizona Global Campus</p><small>Magna cum laude · Dean's List, 2020-2023</small></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-rule"></div>
+
+    <section class="content-grid">
+      <div class="side-label">WORK BEYOND THE ROLE</div>
+      <div class="independent-work">
+        <div>
+          <p class="section-eyebrow">INDEPENDENT SOFTWARE</p>
+          <h2>Turning ideas into working products.</h2>
+        </div>
+        <div>
+          <p>Outside my professional role, I develop independent software projects that let me explore application architecture, data, product decisions, and the path from an idea to a usable experience.</p>
+          <p><strong>PresiCompare</strong> is a live data-driven platform for exploring historical U.S. statistics across presidential terms. <strong>Huddle Up</strong> is a community-focused mobile application project built with React Native and Expo, with a separate ASP.NET Core API backend.</p>
+          <a class="action-link" href="/projects/">Explore my projects <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-panel">
+      <p class="section-eyebrow">LOOKING AHEAD</p>
+      <h2>Engineering today. Preparing to teach tomorrow.</h2>
+      <p>I want to continue building useful technology while developing the knowledge and communication skills to teach, mentor, and make technical concepts more accessible to others.</p>
+      <div class="closing-links"><a href="/academia/">Academic journey ↗</a><a href="/teaching/">Teaching interests ↗</a><a href="/contact/">Get in touch ↗</a></div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .inner-page{width:min(1120px,calc(100% - 72px));margin:0 auto;padding:72px 0 100px;color:#191b1f}
+  .kicker,.section-eyebrow{font-size:.66rem;letter-spacing:.16em;font-weight:700;color:#737880;margin:0 0 22px}
+  .page-heading{font-size:clamp(3rem,7vw,6.5rem);line-height:.94;letter-spacing:-.075em;font-weight:650;margin:0 0 28px;max-width:1000px}
+  .page-heading span{color:#8a8f96}
+  .page-lede{font-size:1.08rem;line-height:1.85;color:#5e636b;max-width:850px;margin:0}
+  .intro-grid{display:grid;grid-template-columns:220px 1fr;gap:50px;margin-top:62px}
+  .intro-number{display:flex;flex-direction:column;gap:12px;border-top:1px solid #cfd2d6;padding-top:15px;align-self:start}
+  .intro-number span{font-size:2.5rem;line-height:1;letter-spacing:-.07em;color:#a4a8ad}
+  .intro-number small,.side-label{font-size:.65rem;font-weight:700;letter-spacing:.13em;color:#7c8188}
+  .intro-copy h2,.academic-block h2,.independent-work h2{font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.15;letter-spacing:-.05em;margin:0 0 20px;max-width:760px}
+  .intro-copy p,.career-stage p,.academic-block>p:not(.section-eyebrow),.independent-work p:not(.section-eyebrow),.closing-panel>p:not(.section-eyebrow){font-size:.94rem;line-height:1.9;color:#5d626a;margin:0 0 17px}
+  .page-rule{height:1px;background:#d9dce0;margin:50px 0}
+  .content-grid{display:grid;grid-template-columns:220px 1fr;gap:50px}
+  .side-label{padding-top:5px}
+  .career-path{border-top:1px solid #d9dce0}
+  .career-stage{padding:25px 0 28px;border-bottom:1px solid #d9dce0}
+  .stage-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:.64rem;font-weight:700;letter-spacing:.1em;color:#777c83;margin-bottom:15px}
+  .career-stage h2{font-size:1.45rem;letter-spacing:-.04em;margin:0 0 10px}
+  .career-stage p{max-width:760px;margin:0}
+  .academic-block .section-eyebrow,.independent-work .section-eyebrow,.closing-panel .section-eyebrow{margin-bottom:12px}
+  .academic-block>p:not(.section-eyebrow){max-width:800px}
+  .degree-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+  .degree-card{border:1px solid #d9dce0;padding:20px 18px;min-height:190px;display:flex;flex-direction:column;align-items:flex-start}
+  .degree-year{font-size:.62rem;letter-spacing:.13em;font-weight:700;color:#777c83;margin-bottom:22px}
+  .degree-card h3{font-size:1.04rem;line-height:1.35;letter-spacing:-.025em;margin:0 0 9px}
+  .degree-card p{font-size:.78rem;line-height:1.65;color:#5f646b;margin:0 0 12px}
+  .degree-card small{font-size:.7rem;line-height:1.5;color:#777c83;margin-top:auto}
+  .independent-work{display:grid;grid-template-columns:1fr 1.1fr;gap:35px}
+  .independent-work p strong{color:#242629}
+  .action-link{display:inline-flex;align-items:center;gap:12px;margin-top:7px;padding:13px 16px;background:#111214;color:#fff;text-decoration:none;font-size:.76rem;font-weight:700}
+  .action-link:hover{background:#36393e}
+  .closing-panel{margin-top:58px;background:#111214;color:#fff;padding:38px 42px}
+  .closing-panel .section-eyebrow{color:#aeb2b7}
+  .closing-panel h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.08;letter-spacing:-.055em;max-width:720px;margin:0 0 15px}
+  .closing-panel>p:not(.section-eyebrow){color:#c2c5ca;max-width:760px}
+  .closing-links{display:flex;flex-wrap:wrap;gap:22px;margin-top:24px}
+  .closing-links a{font-size:.75rem;font-weight:700;text-decoration:none;border-bottom:1px solid #666b72;padding-bottom:6px}
+  .closing-links a:hover{border-color:#fff}
+  @media(max-width:760px){.inner-page{width:calc(100% - 36px);padding:48px 0 70px}.intro-grid,.content-grid{grid-template-columns:1fr;gap:17px}.intro-grid{margin-top:42px}.intro-number{flex-direction:row;align-items:center;gap:14px}.intro-number span{font-size:1.7rem}.page-rule{margin:36px 0}.degree-grid{grid-template-columns:1fr}.degree-card{min-height:0}.degree-year{margin-bottom:14px}.independent-work{grid-template-columns:1fr;gap:10px}.closing-panel{padding:27px 23px;margin-top:40px}.closing-links{gap:15px}}
+
+  .inner-page{background-image:linear-gradient(90deg,#f5f6f7 0%,rgba(245,246,247,.97) 34%,rgba(245,246,247,.78) 54%,rgba(16,18,20,.10) 100%),url('/images/engineering-workspace.png');background-size:100% 410px,58% 410px;background-position:top right;background-repeat:no-repeat}
+  .inner-page>.kicker:first-child{padding-top:6px}
+  .intro-grid{border-top:1px solid #cfd4d9;padding-top:22px}
+  .career-stage{padding:28px 24px;background:#fff;border-bottom:1px solid #d7dce0}
+  .career-stage:first-child{border-top:0}
+  .degree-card{background:#fff;border:1px solid #d4d9de}
+  .closing-panel{background:#111315;color:#fff;padding:34px;margin-top:48px}
+  .closing-panel h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.02;letter-spacing:-.06em}
+  .closing-panel p:not(.section-eyebrow){color:#c5cbd1}
+  @media(max-width:760px){.inner-page{background-size:100% 330px,100% 330px}}
+
+</style>

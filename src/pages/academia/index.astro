@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Academia | Byron David Lencrerot III" description="Academic history, achievements, and doctoral studies of Byron David Lencrerot III.">
+  <div class="inner-page">
+    <p class="kicker">03 / ACADEMIC JOURNEY</p>
+    <h1 class="page-heading">A foundation in technology.<br /><span>A continuing academic journey.</span></h1>
+    <p class="page-lede">My education has progressed from an undergraduate foundation in information technology to graduate study in information systems management and doctoral study in information technology. Each stage represents a continued investment in learning while building a career in technology.</p>
+
+    <section class="academic-summary" aria-label="Academic overview">
+      <div class="summary-item"><span class="summary-number">03</span><span class="summary-label">Degree milestones</span></div>
+      <div class="summary-item"><span class="summary-number">4.0</span><span class="summary-label">Master's GPA</span></div>
+      <div class="summary-item"><span class="summary-number">2028</span><span class="summary-label">Expected doctoral completion</span></div>
+    </section>
+
+    <div class="page-rule"></div>
+
+    <section aria-labelledby="education-heading">
+      <div class="section-heading"><p class="side-label">EDUCATION</p><h2 id="education-heading">Academic milestones</h2></div>
+      <div class="timeline">
+        <article class="timeline-item doctoral">
+          <div class="timeline-date"><span class="status-dot"></span>JUNE 2026 - NOVEMBER 2028</div>
+          <div class="timeline-body">
+            <p class="degree-level">DOCTORAL STUDY · IN PROGRESS</p>
+            <h3>Doctor of Information Technology</h3>
+            <p class="institution">Capella University</p>
+            <p>Currently pursuing a doctorate in information technology, building on prior graduate education and professional experience in software development.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-date">AWARDED SEPTEMBER 29, 2025</div>
+          <div class="timeline-body">
+            <p class="degree-level">GRADUATE DEGREE</p>
+            <h3>Master of Science in Information Systems Management</h3>
+            <p class="institution">University of Arizona Global Campus</p>
+            <div class="achievement-row"><span class="achievement">4.0 GPA</span><span class="achievement">Degree awarded</span></div>
+            <p>Completed graduate study in information systems management with a 4.0 GPA.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-date">AWARDED FEBRUARY 19, 2024</div>
+          <div class="timeline-body">
+            <p class="degree-level">UNDERGRADUATE DEGREE</p>
+            <h3>Bachelor of Science in Information Technology</h3>
+            <p class="institution">University of Arizona Global Campus</p>
+            <div class="achievement-row"><span class="achievement">Magna Cum Laude</span><span class="achievement">Dean's List, 2020-2023</span></div>
+            <p>Established an academic foundation in information technology and earned recognition for academic performance.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="page-rule"></div>
+
+    <section class="content-grid" aria-labelledby="connection-heading">
+      <div><p class="side-label">STUDY & PRACTICE</p></div>
+      <div class="connection-content">
+        <h2 id="connection-heading">Connecting education with professional practice</h2>
+        <p>Formal education is one part of my development as a technologist. My professional work in software development and my independent projects provide practical contexts for applying technical knowledge, working with data, and thinking through how software systems are built and maintained.</p>
+        <div class="connection-grid">
+          <article class="info-card"><span class="card-index">01</span><h3>Information technology</h3><p>The undergraduate degree that established my formal academic path in technology.</p></article>
+          <article class="info-card"><span class="card-index">02</span><h3>Information systems management</h3><p>Graduate study that extended that path into information systems management.</p></article>
+          <article class="info-card"><span class="card-index">03</span><h3>Doctoral study</h3><p>My current academic focus, continuing through the Doctor of Information Technology program at Capella University.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-step">
+      <div><p class="kicker">LOOKING AHEAD</p><h2>From continued learning to teaching.</h2><p>My academic journey also informs my long-term goal of teaching technology and helping others connect technical concepts with practical work.</p></div>
+      <a class="action-link" href="/teaching/">Explore teaching <span aria-hidden="true">↗</span></a>
+    </section>
+  </div>
+</BaseLayout>
+<style>
+  .inner-page{width:min(1120px,calc(100% - 72px));margin:0 auto;padding:72px 0 100px;color:#191b1f}
+  .kicker{font-size:.66rem;letter-spacing:.16em;font-weight:700;color:#737880;margin:0 0 22px}
+  .page-heading{font-size:clamp(2.8rem,6.2vw,5.7rem);line-height:.98;letter-spacing:-.07em;font-weight:650;margin:0 0 28px;max-width:1050px}
+  .page-heading span{color:#858a92}
+  .page-lede{font-size:1.08rem;line-height:1.85;color:#5e636b;max-width:800px;margin:0}
+  .academic-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #d9dce0;margin-top:42px}
+  .summary-item{padding:22px 25px;display:flex;flex-direction:column;gap:5px;border-right:1px solid #d9dce0}.summary-item:last-child{border-right:0}
+  .summary-number{font-size:2.2rem;font-weight:650;letter-spacing:-.06em;line-height:1}.summary-label{font-size:.72rem;color:#666c74;line-height:1.5}
+  .page-rule{height:1px;background:#d9dce0;margin:48px 0}
+  .section-heading{display:grid;grid-template-columns:220px 1fr;gap:50px;align-items:start;margin-bottom:22px}
+  .side-label{font-size:.65rem;font-weight:700;letter-spacing:.13em;color:#7c8188;margin:4px 0 0}
+  .section-heading h2,.connection-content h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.1;letter-spacing:-.05em;margin:0;font-weight:620}
+  .timeline{border-top:1px solid #d9dce0;margin-left:270px}
+  .timeline-item{display:grid;grid-template-columns:180px 1fr;gap:30px;padding:30px 0;border-bottom:1px solid #d9dce0}
+  .timeline-date{font-size:.68rem;letter-spacing:.07em;color:#777c83;font-weight:700;line-height:1.6}
+  .status-dot{display:inline-block;width:7px;height:7px;background:#25282d;border-radius:50%;margin:0 8px 1px 0}
+  .degree-level{font-size:.62rem;letter-spacing:.13em;font-weight:700;color:#777c83;margin:0 0 10px}
+  .timeline-body h3{font-size:1.35rem;letter-spacing:-.035em;line-height:1.25;margin:0 0 7px;font-weight:600}
+  .institution{font-size:.85rem!important;font-weight:600;color:#34383e!important;margin:0 0 12px!important}
+  .timeline-body>p:last-child{margin:0;color:#626770;font-size:.9rem;line-height:1.8;max-width:650px}
+  .achievement-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+  .achievement{border:1px solid #cfd3d8;padding:6px 9px;font-size:.66rem;letter-spacing:.02em;font-weight:700;color:#454a52}
+  .content-grid{display:grid;grid-template-columns:220px 1fr;gap:50px}
+  .connection-content>p{color:#626770;font-size:.94rem;line-height:1.9;max-width:800px;margin:16px 0 25px}
+  .connection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .info-card{border:1px solid #d9dce0;padding:21px 18px;background:#fff;min-height:175px}
+  .card-index{display:block;color:#858a92;font-size:.66rem;letter-spacing:.12em;font-weight:700;margin-bottom:22px}
+  .info-card h3{margin:0 0 9px;font-size:.98rem;letter-spacing:-.02em}.info-card p{margin:0;color:#646971;font-size:.81rem;line-height:1.75}
+  .next-step{margin-top:60px;background:#111214;color:#fff;padding:32px 34px;display:flex;justify-content:space-between;align-items:end;gap:28px}
+  .next-step .kicker{color:#aeb3ba;margin-bottom:15px}.next-step h2{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.055em;line-height:1.05;margin:0 0 12px}.next-step p:not(.kicker){max-width:650px;color:#c2c5ca;font-size:.88rem;line-height:1.8;margin:0}
+  .action-link{display:inline-flex;align-items:center;gap:14px;flex-shrink:0;padding:13px 16px;background:#fff;color:#111214;text-decoration:none;font-size:.76rem;font-weight:700}.action-link:hover{background:#dfe2e6}
+  @media(max-width:760px){.inner-page{width:calc(100% - 36px);padding:48px 0 70px}.academic-summary{grid-template-columns:1fr}.summary-item{border-right:0;border-bottom:1px solid #d9dce0;padding:16px 20px}.summary-item:last-child{border-bottom:0}.summary-number{font-size:1.8rem}.section-heading,.content-grid{grid-template-columns:1fr;gap:16px}.timeline{margin-left:0}.timeline-item{grid-template-columns:1fr;gap:10px;padding:23px 0}.connection-grid{grid-template-columns:1fr}.next-step{align-items:start;flex-direction:column;padding:25px 22px}.page-heading{font-size:clamp(2.65rem,12vw,4.4rem)}.page-lede{font-size:.98rem}}
+
+  .inner-page{background-image:linear-gradient(90deg,#f5f6f7 0%,rgba(245,246,247,.98) 36%,rgba(245,246,247,.78) 58%,rgba(16,18,20,.13) 100%),url('/images/engineering-workspace.png');background-size:100% 390px,56% 390px;background-position:top right;background-repeat:no-repeat}
+  .academic-summary{background:#101214;color:#fff;border:1px solid #101214}
+  .summary-item{background:transparent;color:#fff;border-color:#383d43}
+  .summary-number{color:#9ba3ab}
+  .summary-item h2,.summary-item strong{color:#fff}
+  .summary-item p{color:#c4cad0}
+  .academic-card{background:#fff;border:1px solid #d4d9de}
+  .connection-grid .info-card{border-top:2px solid #111315}
+  @media(max-width:760px){.inner-page{background-size:100% 320px,100% 320px}}
+
+</style>
