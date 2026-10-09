@@ -25,12 +25,13 @@ const {
           <span class="brand-copy"><strong>BYRON DAVID LENCREROT III</strong><small>SOFTWARE ENGINEERING / ACADEMIA</small></span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="/about/" class:list={{ active: Astro.url.pathname.startsWith('/about') }}>Profile</a>
-          <a href="/projects/" class:list={{ active: Astro.url.pathname.startsWith('/projects') }}>Projects</a>
-          <a href="/academia/" class:list={{ active: Astro.url.pathname.startsWith('/academia') }}>Academia</a>
-          <a href="/teaching/" class:list={{ active: Astro.url.pathname.startsWith('/teaching') }}>Teaching</a>
-          <a href="/resume/" class:list={{ active: Astro.url.pathname.startsWith('/resume') }}>Résumé</a>
-          <a class="nav-contact" href="/contact/" class:list={{ active: Astro.url.pathname.startsWith('/contact') }}>Contact ↗</a>
+          <a href="/" class:list={{ active: Astro.url.pathname === '/' }} aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Home</a>
+          <a href="/about/" class:list={{ active: Astro.url.pathname.startsWith('/about') }} aria-current={Astro.url.pathname.startsWith('/about') ? 'page' : undefined}>Profile</a>
+          <a href="/projects/" class:list={{ active: Astro.url.pathname.startsWith('/projects') }} aria-current={Astro.url.pathname.startsWith('/projects') ? 'page' : undefined}>Projects</a>
+          <a href="/academia/" class:list={{ active: Astro.url.pathname.startsWith('/academia') }} aria-current={Astro.url.pathname.startsWith('/academia') ? 'page' : undefined}>Academia</a>
+          <a href="/teaching/" class:list={{ active: Astro.url.pathname.startsWith('/teaching') }} aria-current={Astro.url.pathname.startsWith('/teaching') ? 'page' : undefined}>Teaching</a>
+          <a href="/resume/" class:list={{ active: Astro.url.pathname.startsWith('/resume') }} aria-current={Astro.url.pathname.startsWith('/resume') ? 'page' : undefined}>Résumé</a>
+          <a class="nav-contact" href="/contact/" class:list={{ active: Astro.url.pathname.startsWith('/contact') }} aria-current={Astro.url.pathname.startsWith('/contact') ? 'page' : undefined}>Contact ↗</a>
         </nav>
       </div>
     </header>

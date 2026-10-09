@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, a historical data analysis platform, and Huddle Up, a community coordination mobile application.">
-  <main class="projects-page">
+  <div class="projects-page">
     <header class="project-intro">
       <p class="eyebrow">SELECTED SOFTWARE PROJECTS <span> / 02</span></p>
       <h1>Ideas, engineered<br /><span>into applications.</span></h1>
@@ -67,7 +67,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <section class="case-study huddle" aria-labelledby="huddle-title">
+    <section id="huddle-up" class="case-study huddle" aria-labelledby="huddle-title">
       <div class="case-index">
         <span class="index-number">02</span>
         <span class="case-status"><i class="status-dot in-progress"></i> IN DEVELOPMENT</span>
@@ -127,7 +127,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <h2>Make the system work.<br /><span>Make the details trustworthy.</span></h2>
       <p>Across both projects, I focus on the connection between the user experience and the systems behind it: data integrity, clear responsibilities between application layers, maintainable architecture, and validating real behavior rather than assuming that a screen or build proves a feature is complete.</p>
     </section>
-  </main>
+  </div>
 </BaseLayout>
 
 <style>
