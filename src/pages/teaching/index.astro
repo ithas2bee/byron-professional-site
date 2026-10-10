@@ -2,12 +2,21 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Teaching | Byron David Lencrerot III" description="Teaching interests and planned educational content of Byron David Lencrerot III.">
-  <section class="m-hero light" style="background-image:url('/images/chalkboard.svg')">
-    <div class="m-in">
+  <section class="teaching-hero" aria-labelledby="teaching-title">
+    <div class="teaching-hero-photo">
+      <img src="/images/engineering-workspace.png" alt="A software engineering workspace with a laptop and desk." />
+      <div class="teaching-board" aria-hidden="true">
+        <span>Learn</span>
+        <span>Practice</span>
+        <span>Apply</span>
+        <span>Grow</span>
+      </div>
+    </div>
+    <div class="teaching-hero-copy">
       <p class="kicker">05 / TEACHING</p>
-      <h1>Helping Others<br />Learn and Grow</h1>
-      <p class="lede">I plan to develop lectures and videos that explain coding concepts in ways children and adults can understand, connecting technical ideas to practical use and real applications.</p>
-      <div class="m-actions"><a class="btn dark" href="#planned-content">Explore Teaching Plans <span aria-hidden="true">→</span></a></div>
+      <h1 id="teaching-title">Helping Others<br />Learn and Grow</h1>
+      <p class="lede">My goal is to develop lectures, videos, and learning resources that make technology understandable and practical for both children and adults.</p>
+      <div class="m-actions"><a class="btn" href="#planned-content">Explore Teaching Content <span aria-hidden="true">→</span></a></div>
     </div>
   </section>
   <div class="inner-page">
@@ -49,21 +58,34 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </div>
 </BaseLayout>
 <style>
+  .teaching-hero{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(246px,33vw,440px);display:flex;align-items:center;background:#f4f5f6;color:#111820}
+  .teaching-hero::before{content:"";position:absolute;z-index:0;inset:0;background:linear-gradient(90deg,#f4f5f6 0%,#f4f5f6 38%,rgba(244,245,246,.94) 44%,rgba(244,245,246,.52) 52%,rgba(244,245,246,0) 62%)}
+  .teaching-hero-photo{position:absolute;z-index:-1;inset:0 0 0 40%;overflow:hidden;background:#15191d}
+  .teaching-hero-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 54%}
+  .teaching-board{position:absolute;top:2%;right:1.5%;width:62%;height:56%;display:flex;flex-direction:column;justify-content:center;padding:10px 0 10px 20%;border:5px solid #6c5a48;background:#11161b;color:#e4e6e8;box-shadow:inset 0 0 0 3px #252a2e,0 5px 12px #0008;font-size:clamp(.8rem,2.2vw,1.25rem);line-height:1.22;letter-spacing:.025em}
+  .teaching-hero-copy{position:relative;z-index:1;width:min(640px,calc(51% - 24px));margin-left:max(44px,calc((100% - 1380px)/2 + 44px));padding:28px 0}
+  .teaching-hero .kicker{font-size:.65rem;letter-spacing:.12em;color:#4b555e;margin:0 0 7px}
+  .teaching-hero h1{font-size:clamp(1.8rem,4.2vw,3.5rem);line-height:1.04;letter-spacing:-.035em;font-weight:600;margin:0 0 8px;max-width:500px}
+  .teaching-hero .lede{max-width:490px;font-size:.82rem;line-height:1.35;color:#4f5a64;margin:0}
+  .teaching-hero .m-actions{margin-top:17px}
+  .teaching-hero .btn{padding:10px 14px;font-size:.72rem;border-color:#b6bec5;background:rgba(255,255,255,.88);box-shadow:0 2px 4px #1112}
+  .teaching-hero .btn:hover{background:#fff}
   .inner-page{width:min(1120px,calc(100% - 72px));margin:0 auto;padding:62px 0 88px;color:#191b1f}
   .content-grid{display:grid;grid-template-columns:190px minmax(0,1fr);gap:46px}
   .side-label{font-size:.65rem;font-weight:700;letter-spacing:.13em;color:#7c8188;margin:5px 0 0}
   .prose h2{font-size:clamp(1.55rem,3vw,2rem);line-height:1.15;letter-spacing:-.04em;margin:0 0 15px}
   .prose p{font-size:.93rem;line-height:1.8;color:#5d626a;margin:0 0 17px}
   .page-rule{height:1px;background:#d9dce0;margin:38px 0}
-  .card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:23px}
-  .info-card{border:1px solid #d9dce0;border-top:2px solid #111315;background:#fff;padding:20px 18px;min-height:154px}
+  .card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:23px}
+  .info-card{border:0;border-top:1px solid #aeb8c2;background:transparent;padding:16px 0;min-height:0}
   .info-card h3{font-size:.96rem;line-height:1.4;letter-spacing:-.02em;margin:0 0 9px}
   .info-card p{font-size:.81rem;line-height:1.7;color:#646971;margin:0}
   .step-number{display:block;font-size:.6rem;letter-spacing:.12em;font-weight:700;color:#777c83;margin-bottom:18px}
   .teaching-model .info-card{min-height:0}
-  .planned-note{margin-top:38px;padding:28px 30px;background:#10161d;color:#fff;border-left:4px solid #aeb8c2}
-  .planned-note .kicker{font-size:.61rem;letter-spacing:.13em;color:#aeb8c2;margin:0 0 11px}
-  .planned-note h2{font-size:1.35rem;letter-spacing:-.03em;margin:0 0 9px}
-  .planned-note>p:last-child{max-width:740px;color:#d1d8de;font-size:.87rem;line-height:1.75;margin:0}
-  @media(max-width:760px){.inner-page{width:calc(100% - 36px);padding:42px 0 68px}.content-grid{grid-template-columns:1fr;gap:14px}.card-grid{grid-template-columns:1fr}.page-rule{margin:30px 0}.info-card{min-height:0}.planned-note{margin-top:30px;padding:24px 21px}}
+  .planned-note{margin-top:30px;padding:23px 0 0;border-top:1px solid #d9dce0;color:#191b1f}
+  .planned-note .kicker{font-size:.61rem;letter-spacing:.13em;color:#7c8188;margin:0 0 8px}
+  .planned-note h2{font-size:1.2rem;letter-spacing:-.03em;margin:0 0 7px}
+  .planned-note>p:last-child{max-width:740px;color:#5d626a;font-size:.84rem;line-height:1.7;margin:0}
+  @media(max-width:760px){.inner-page{width:calc(100% - 36px);padding:42px 0 68px}.content-grid{grid-template-columns:1fr;gap:14px}.card-grid{grid-template-columns:1fr;gap:8px}.page-rule{margin:30px 0}.info-card{min-height:0}.planned-note{margin-top:25px}}
+  @media(max-width:560px){.teaching-hero{min-height:510px;align-items:flex-start}.teaching-hero::before{background:linear-gradient(180deg,#f4f5f6 0%,rgba(244,245,246,.98) 48%,rgba(244,245,246,.7) 62%,rgba(244,245,246,0) 64%)}.teaching-hero-photo{inset:0}.teaching-hero-photo img{object-position:center 60%}.teaching-board{top:auto;right:3%;bottom:5%;width:53%;height:27%;padding-left:30%;font-size:1rem}.teaching-hero-copy{width:auto;margin:0;padding:32px 20px}.teaching-hero h1{font-size:clamp(1.9rem,8vw,2.4rem)}.teaching-hero .lede{max-width:440px}.teaching-hero .m-actions{margin-top:16px}}
 </style>
