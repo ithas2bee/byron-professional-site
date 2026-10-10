@@ -2,12 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Teaching | Byron David Lencrerot III" description="Teaching interests and future academic direction of Byron David Lencrerot III.">
+  <section class="m-hero plain" style="background-image:url('/images/chalkboard.svg')">
+    <div class="m-in">
+      <p class="kicker">05 / TEACHING</p>
+      <h1>Helping Others<br />Learn and Grow</h1>
+      <p class="lede">My goal is to develop lectures, videos, and learning resources that make technology understandable and practical for both children and adults.</p>
+      <div class="m-actions"><a class="btn" href="#teaching-approach">Explore Teaching Content <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
   <div class="inner-page">
-    <p class="kicker">04 / TEACHING & KNOWLEDGE SHARING</p>
-    <h1 class="page-heading">Make technology<br /><span>understandable.</span></h1>
-    <p class="page-lede">A developing teaching portfolio shaped by Norman Eng’s <em>Teaching College</em>, the I, We, You approach, and my interest in making technical ideas clear through guided practice and real-world examples.</p>
-    <div class="page-rule"></div>
-    <div class="content-grid"><div class="side-label">TEACHING APPROACH</div><div class="prose">
+    <div class="content-grid"><div class="side-label" id="teaching-approach">TEACHING APPROACH</div><div class="prose">
       <h2>Guided learning, followed by independent practice</h2>
       <p>One of the main influences on my developing teaching philosophy is Norman Eng’s book <em>Teaching College</em>. I especially connect with the I, We, You approach as a practical foundation for helping students move from seeing a concept demonstrated to practicing it with support and then applying it independently.</p>
       <p>I want students to understand the reasoning behind a solution, not simply memorize which buttons to click or which lines of code to copy. For technical subjects, that means making my thinking visible, working through examples together, and then giving learners a meaningful opportunity to try the skill themselves.</p>

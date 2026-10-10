@@ -2,17 +2,26 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, a historical data analysis platform, and Huddle Up, a community coordination mobile application.">
+  <section class="m-projects" aria-label="Projects overview">
+    <div class="intro">
+      <p class="kicker">02 / PROJECTS</p>
+      <h1>Software Projects<br />with Real Impact</h1>
+      <p class="page-lede">Independent applications built to solve real problems, explore ideas, and demonstrate practical software engineering skills.</p>
+    </div>
+    <article class="m-card" style="background-image:url('/images/engineering-workspace.png')">
+      <h2>PresiCompare</h2>
+      <p>A web application for comparing presidential terms using public data, without scoring or declaring a winner.</p>
+      <div class="tags"><span>Web Application</span><span>Data Integration</span><span>User Experience</span></div>
+      <a class="btn" href="#presicompare-title">View Project <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="m-card" style="background-image:url('/images/engineering-workspace.png');background-position:left center">
+      <h2>Huddle Up</h2>
+      <p>A community coordination mobile application built with React Native, Expo, and an ASP.NET Core API.</p>
+      <div class="tags"><span>Mobile Application</span><span>React Native</span><span>ASP.NET Core</span></div>
+      <a class="btn" href="#huddle-up">View Project <span aria-hidden="true">→</span></a>
+    </article>
+  </section>
   <div class="projects-page">
-    <header class="project-intro">
-      <p class="eyebrow">SELECTED SOFTWARE PROJECTS <span> / 02</span></p>
-      <h1>Ideas, engineered<br /><span>into applications.</span></h1>
-      <p class="intro-copy">I build software that helps people explore information, make sense of complex data, and bring people together. These projects reflect two different challenges: designing a data-driven research platform and engineering a community-first mobile experience.</p>
-      <div class="intro-meta">
-        <span><i class="status-dot"></i> Independent development</span>
-        <span>Web platforms / Mobile applications / APIs / Data systems</span>
-      </div>
-    </header>
-
     <section class="case-study presi" aria-labelledby="presicompare-title">
       <div class="case-index">
         <span class="index-number">01</span>

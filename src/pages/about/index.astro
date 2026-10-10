@@ -2,53 +2,25 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About | Byron David Lencrerot III" description="Learn about Byron David Lencrerot III, a software engineer, Doctor of Information Technology student, and aspiring educator.">
+  <section class="m-hero plain" style="background-image:url('/images/journey-landscape.svg')">
+    <div class="m-in">
+      <p class="kicker">01 / ABOUT</p>
+      <h1>A Journey in Technology,<br />Education, and Problem Solving</h1>
+      <p class="lede">My journey combines telecommunications, software engineering, independent development, and doctoral study, all with the goal of teaching technology and helping others grow.</p>
+    </div>
+    <ul class="m-nodes" aria-label="Professional journey"><li>Future Educator</li><li>Doctoral Education</li><li>Software Engineering</li><li>Telecommunications</li></ul>
+  </section>
+  <section class="m-journey" aria-labelledby="journey-title">
+    <h2 id="journey-title">Professional Journey</h2>
+    <ol class="m-tl">
+      <li><time>2014 – 2023</time><i></i><div><strong>Comcast</strong><span>Four technician levels, progressing from CT1 to CT4 and working on business installations and advanced technical support.</span></div></li>
+      <li><time>2023 – Present</time><i></i><div><strong>Software Development</strong><span>Transitioned to software development in June 2023.</span></div></li>
+      <li><time>Ongoing</time><i></i><div><strong>Independent Projects</strong><span>Developing applications such as PresiCompare and Huddle Up.</span></div></li>
+      <li><time>Ongoing</time><i></i><div><strong>Doctoral Studies</strong><span>Pursuing a Doctor of Information Technology at Capella University.</span></div></li>
+      <li><time>Future</time><i></i><div><strong>Teaching Technology</strong><span>Combining my experience and education to teach the next generation.</span></div></li>
+    </ol>
+  </section>
   <div class="inner-page">
-    <section class="about-hero" aria-labelledby="about-title">
-      <div class="about-copy">
-        <p class="kicker">01 / ABOUT</p>
-        <h1 id="about-title" class="page-heading">A Journey in Technology,<br />Education, and Problem Solving</h1>
-        <p class="page-lede">My journey combines telecommunications, software engineering, independent development, and doctoral study, all with the goal of teaching technology and helping others grow.</p>
-      </div>
-      <ol class="journey-track" aria-label="Professional journey">
-        <li>Future Educator</li>
-        <li>Doctoral Education</li>
-        <li>Software Engineering</li>
-        <li>Telecommunications</li>
-      </ol>
-    </section>
-
-    <section class="content-grid journey-section">
-      <h2 class="journey-heading">Professional Journey</h2>
-      <div class="side-label">CAREER PATH</div>
-      <div class="career-path">
-        <article class="career-stage">
-          <div class="stage-meta"><span>2014 - 2023</span><span>TELECOMMUNICATIONS</span></div>
-          <h2>Learning technology in the field</h2>
-          <p>At Comcast, I progressed through four technician levels: CT1, CT2, CT3, and CT4. Each step expanded my responsibilities, from foundational residential internet and TV installation and service, to independent service work, CDV/phone troubleshooting, and advanced installations for business clients.</p>
-        </article>
-        <article class="career-stage">
-          <div class="stage-meta"><span>2023 - PRESENT</span><span>SOFTWARE DEVELOPMENT</span></div>
-          <h2>Building and supporting enterprise applications</h2>
-          <p>As an Engineer 1, Software Development, I work with C# and ASP.NET to develop applications and contribute to Comcast's technical infrastructure. My work also draws on database technologies, integration processes, troubleshooting, and production support.</p>
-        </article>
-        <article class="career-stage">
-          <div class="stage-meta"><span>ONGOING</span><span>INDEPENDENT PROJECTS</span></div>
-          <h2>Developing independent software</h2>
-          <p>PresiCompare and Huddle Up extend my experience into independent web and mobile application development.</p>
-        </article>
-        <article class="career-stage">
-          <div class="stage-meta"><span>ONGOING</span><span>DOCTORAL STUDY</span></div>
-          <h2>Doctor of Information Technology</h2>
-          <p>I am pursuing a Doctor of Information Technology at Capella University.</p>
-        </article>
-        <article class="career-stage">
-          <div class="stage-meta"><span>FUTURE</span><span>TEACHING TECHNOLOGY</span></div>
-          <h2>Preparing to teach the next generation</h2>
-          <p>Combining my professional experience and education to teach technology and help others grow.</p>
-        </article>
-      </div>
-    </section>
-
     <section class="intro-grid" aria-label="Professional overview">
       <div class="intro-number"><span>01</span><small>MY APPROACH</small></div>
       <div class="intro-copy">

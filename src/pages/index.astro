@@ -36,7 +36,7 @@ const projects = [
         <div class="hero-intro">
           <p>Experienced in telecommunications and software engineering, independent developer, and doctoral student in Information Technology with a goal of teaching technology and helping others grow.</p>
           <div class="hero-links">
-            <a class="button button-black" href="#projects">View My Work <span aria-hidden="true">→</span></a>
+            <a class="button button-black" href="/projects/">View My Work <span aria-hidden="true">→</span></a>
             <a class="button button-outline" href="/contact/">Contact Me <span aria-hidden="true">→</span></a>
           </div>
         </div>
@@ -47,83 +47,13 @@ const projects = [
 
   <section class="metrics-band">
     <div class="page-width metrics-grid">
-      <div class="metric"><span class="metric-index">01</span><div><small>PROFESSIONAL FIELD</small><strong>Software Engineering</strong></div></div>
-      <div class="metric"><span class="metric-index">02</span><div><small>GRADUATE DEGREE</small><strong>M.S. · GPA 4.0</strong></div></div>
-      <div class="metric"><span class="metric-index">03</span><div><small>CURRENT PURSUIT</small><strong>Doctor of Information Technology</strong></div></div>
-      <div class="metric"><span class="metric-index">04</span><div><small>INDEPENDENT WORK</small><strong>Web &amp; Mobile Products</strong></div></div>
+      <div class="metric"><span class="metric-index">01</span><div><strong>Software Engineering</strong><small>Professional experience in telecommunications and software development.</small></div></div>
+      <div class="metric"><span class="metric-index">02</span><div><strong>M.S. Information Systems Management</strong><small>University of Arizona Global Campus · 4.0 GPA</small></div></div>
+      <div class="metric"><span class="metric-index">03</span><div><strong>Doctoral Student, Information Technology</strong><small>Capella University</small></div></div>
+      <div class="metric"><span class="metric-index">04</span><div><strong>Independent Developer</strong><small>Web and mobile products with real-world applications.</small></div></div>
     </div>
   </section>
 
-  <section id="about" class="content-section page-width">
-    <div class="section-rail"><span>01</span><span>PROFILE</span><span class="rail-line"></span></div>
-    <div class="section-content">
-      <div class="section-title-row">
-        <h2>Experience shaped<br /><span>by practice.</span></h2>
-        <p class="section-deck">A professional path from hands-on technology services to enterprise software development, supported by continued academic study.</p>
-      </div>
-      <div class="bio-columns">
-        <p>My work in software development involves enterprise applications, database systems, data integration, troubleshooting, and production support. Before moving into software development, I built a foundation in customer-facing telecommunications technology.</p>
-        <p>I am pursuing a Doctor of Information Technology while preparing for a future in computing education. This site documents my professional work, independent software projects, academic interests, and educational resources as they grow.</p>
-      </div>
-      <div class="bio-footer"><span>PROFESSIONAL EXPERIENCE / COMCAST</span><span>SOFTWARE DEVELOPMENT SINCE 2023</span></div>
-    </div>
-  </section>
-
-  <section id="projects" class="projects-section">
-    <div class="page-width content-section projects-content">
-      <div class="section-rail"><span>02</span><span>SELECTED WORK</span><span class="rail-line"></span></div>
-      <div class="section-content">
-        <div class="section-title-row">
-          <h2>Products, not<br /><span>just concepts.</span></h2>
-          <p class="section-deck">Independent software work presented through product context and engineering choices. Source repositories remain private.</p>
-        </div>
-        <div class="project-list">
-          {projects.map((project) => (
-            <article class="project-row">
-              <div class="project-number">{project.number}</div>
-              <div class="project-info">
-                <p class="project-type">{project.type}</p>
-                <h3>{project.name}</h3>
-                <p class="project-description">{project.description}</p>
-                <p class="project-tech">{project.technologies}</p>
-                <a class="project-link" href={project.href} target={project.href.startsWith('http') ? '_blank' : undefined} rel={project.href.startsWith('http') ? 'noreferrer' : undefined}>{project.action} <span>↗</span></a>
-              </div>
-              <div class:list={['project-art', project.number === '01' ? 'art-presi' : 'art-huddle']} aria-hidden="true">
-                {project.number === '01' ? (
-                  <div class="browser-art"><div class="browser-top"><span></span><span></span><span></span><b>PRESICOMPARE</b></div><div class="browser-body"><div class="browser-title"></div><div class="browser-panels"><i></i><i></i></div><div class="browser-lines"><i></i><i></i><i></i></div></div></div>
-                ) : (
-                  <div class="phone-art"><div class="phone-top"></div><div class="phone-wordmark">huddle.</div><div class="phone-heading"></div><div class="phone-item"><i></i><span></span></div><div class="phone-item"><i></i><span></span></div><div class="phone-item"><i></i><span></span></div><div class="phone-bottom"><i></i><i></i><i></i></div></div>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="academia" class="content-section page-width">
-    <div class="section-rail"><span>03</span><span>ACADEMIA</span><span class="rail-line"></span></div>
-    <div class="section-content">
-      <div class="section-title-row">
-        <h2>Applied knowledge.<br /><span>Shared forward.</span></h2>
-        <p class="section-deck">A developing academic profile grounded in professional practice and a commitment to making computing concepts accessible.</p>
-      </div>
-      <div class="academic-grid">
-        <article><span class="card-index">A / EDUCATION</span><h3>Doctoral study</h3><p>Doctor of Information Technology, Capella University. In progress, with expected completion in 2028.</p><span class="card-foot">RESEARCH &amp; CONTINUED LEARNING</span></article>
-        <article><span class="card-index">B / TEACHING</span><h3>Computing education</h3><p>Interests include software development, programming, database systems, software engineering, systems analysis, and applied computing.</p><span class="card-foot">FUTURE TEACHING DIRECTION</span></article>
-        <article><span class="card-index">C / PUBLIC KNOWLEDGE</span><h3>Lectures &amp; writing</h3><p>A future home for technical explainers, educational videos, teaching resources, and scholarly work as they are developed.</p><span class="card-foot">CONTENT TO COME</span></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="education-strip">
-    <div class="page-width education-inner">
-      <div><span>EDUCATION</span><strong>M.S. Information Systems Management</strong><small>University of Arizona Global Campus · 4.0 GPA</small></div>
-      <div><span>UNDERGRADUATE HONORS</span><strong>B.S. Information Technology</strong><small>Magna Cum Laude · Dean's List</small></div>
-      <div><span>CONTACT</span><strong>Professional connections</strong><small><a href="mailto:lencrerotl0@gmail.com">lencrerotl0@gmail.com ↗</a></small></div>
-    </div>
-  </section>
 </BaseLayout>
 
 <style>
@@ -230,4 +160,5 @@ const projects = [
   @media(max-width:1050px){.hero.page-width{grid-template-columns:minmax(0,1fr) minmax(0,.8fr);padding-left:32px}.hero-photo{width:46%}.hero-identity{left:54%;width:66px;height:66px}.hero-identity:before{width:54px;height:54px}.hero-identity:after{width:42px;height:60px}.hero h1{font-size:clamp(3rem,6vw,5rem)}}
   @media(max-width:760px){.page-width{width:calc(100% - 32px)}.hero.page-width{width:calc(100% - 12px);display:block;min-height:0;padding:0 22px 210px}.hero-photo{width:100%;height:230px;top:auto;bottom:0;opacity:1;background-image:linear-gradient(180deg,#f7f8f9 0%,rgba(247,248,249,.03) 40%,rgba(16,22,29,.08) 100%),url('/images/engineering-workspace.png');background-position:center 55%}.hero-main{padding:38px 0 18px}.hero .eyebrow{font-size:.49rem;margin-bottom:18px}.hero h1{font-size:clamp(3rem,12vw,4.4rem);line-height:.9}.hero-role{font-size:1rem}.hero-role span{font-size:.93rem}.hero-intro>p{font-size:.82rem}.hero-identity{left:auto;right:19px;top:auto;bottom:163px;transform:none;width:52px;height:52px;font-size:2rem}.hero-identity:before{width:44px;height:44px}.hero-identity:after{width:34px;height:46px}.metrics-grid{width:calc(100% - 12px)}.metrics-grid{grid-template-columns:1fr 1fr}.metric{padding:14px 10px;min-height:76px;border-bottom:1px solid #35414b}.metric:first-child{padding-left:10px}.metric:nth-child(2){border-right:0}.metric strong{font-size:.67rem}.content-section.page-width{width:calc(100% - 32px)}}
   @media(max-width:390px){.hero.page-width{padding-inline:17px;padding-bottom:188px}.hero-photo{height:205px}.hero .eyebrow{font-size:.44rem;gap:5px}.hero-links{gap:8px}.hero-links .button{min-width:0;padding:10px 11px}.hero-identity{bottom:145px}}
+  .metric small{margin:6px 0 0!important;font-size:.62rem!important;letter-spacing:0!important;font-weight:400!important;line-height:1.5}
 </style>
