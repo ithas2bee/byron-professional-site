@@ -2,16 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Résumé | Byron David Lencrerot III" description="Résumé and professional qualifications of Byron David Lencrerot III.">
+  <section class="m-hero light" style="background-image:url('/images/resume-paper.svg')">
+    <div class="m-hero-fade"></div>
+    <div class="m-in">
+      <p class="kicker">03 / RÉSUMÉ</p>
+      <h1>Professional<br />Experience</h1>
+      <p class="lede">Nearly a decade at Comcast, from CT1 to CT4 technician roles, followed by a transition to software development in June 2023.</p>
+      <div class="m-actions"><a class="btn dark" href="#experience">View My Résumé <span aria-hidden="true">→</span></a><a class="btn" href="/contact/">Contact Me <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
   <div class="inner-page">
-    <p class="kicker">05 / PROFESSIONAL SUMMARY</p>
-    <h1 class="page-heading">Experience, education,<br /><span>and technical practice.</span></h1>
-    <p class="page-lede">Software engineer with experience in enterprise software development, SQL Server environments, data integration, troubleshooting, and technical support. Doctor of Information Technology student with a strong academic record and a background in telecommunications technology.</p>
     <div class="page-rule"></div>
     <div class="content-grid"><div class="side-label">CORE SKILLS</div><div>
       <div class="tag-row" style="margin-top:0"><span class="tag">C#</span><span class="tag">ASP.NET</span><span class="tag">Microsoft SQL Server</span><span class="tag">SSIS</span><span class="tag">SQL Server Agent</span><span class="tag">Stored Procedures</span><span class="tag">Visual Studio</span><span class="tag">SSMS</span><span class="tag">SSDT</span><span class="tag">Debugging</span><span class="tag">Root-Cause Analysis</span><span class="tag">Production Validation</span><span class="tag">Technical Documentation</span></div>
     </div></div>
     <div class="page-rule"></div>
-    <div class="content-grid"><div class="side-label">EXPERIENCE</div><div class="timeline">
+    <div class="content-grid"><div class="side-label" id="experience">EXPERIENCE</div><div class="timeline">
       <div class="timeline-item"><div class="timeline-date">JUNE 2023 - PRESENT</div><div><h3>Engineer 1, Software Development</h3><p>As a Software Engineer at Comcast, I play a pivotal role in designing and developing applications using C# and ASP.NET. My primary responsibilities involve crafting software solutions that contribute to Comcast's technical infrastructure and overall customer experience. In this role, I'm tasked with a range of key duties and have developed a diverse skill set to excel in these areas.</p></div></div>
       <div class="timeline-item"><div class="timeline-date">MARCH 2019 - JUNE 2023</div><div><h3>Installation and Service Technician CT4</h3><p>Attaining the CT4 level signified my proficiency in handling complex installations, particularly for businesses. These advanced installations encompassed high-speed internet, TV, and advanced internet and phone services. As a CT4, I worked with business clients, providing tailored solutions to meet their specific needs. This role demanded a higher level of technical expertise and problem-solving to ensure that businesses received a reliable and efficient telecommunications infrastructure.</p></div></div>
       <div class="timeline-item"><div class="timeline-date">FEBRUARY 2015 - MARCH 2019</div><div><h3>Installation and Service Technician CT3</h3><p>Progressing to CT3, I took on the responsibility of troubleshooting and providing installation and service support for CDV/Phone services. This expansion allowed me to address a wider range of customer needs, enhancing their overall satisfaction with Comcast services.</p></div></div>
@@ -51,11 +57,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .action-link{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:13px 16px;background:#111214;color:#fff;text-decoration:none;font-size:.76rem;font-weight:700}.action-link:hover{background:#36393e}
   @media(max-width:700px){.inner-page{width:calc(100% - 36px);padding:48px 0 70px}.content-grid{grid-template-columns:1fr;gap:16px}.card-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:9px}.page-lede{font-size:.98rem}}
 
-  .inner-page{background-image:linear-gradient(90deg,#f5f6f7 0%,rgba(245,246,247,.98) 36%,rgba(245,246,247,.80) 58%,rgba(16,18,20,.12) 100%),url('/images/engineering-workspace.png');background-size:100% 370px,56% 370px;background-position:top right;background-repeat:no-repeat}
   .timeline{border-top:1px solid #bfc6cd}
   .timeline-item{padding:25px 22px;background:rgba(255,255,255,.76);border-bottom:1px solid #d5dbe0}
   .timeline-item h3{font-size:1.18rem;letter-spacing:-.025em}
   .timeline-item p{max-width:760px}
-  @media(max-width:760px){.inner-page{background-size:100% 320px,100% 320px}}
 
 </style>
