@@ -2,11 +2,25 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About | Byron David Lencrerot III" description="Learn about Byron David Lencrerot III, a software engineer, Doctor of Information Technology student, and aspiring educator.">
+  <section class="m-hero plain" style="background-image:url('/images/journey-landscape.svg')">
+    <div class="m-in">
+      <p class="kicker">01 / ABOUT</p>
+      <h1>A Journey in Technology,<br />Education, and Problem Solving</h1>
+      <p class="lede">My journey combines telecommunications, software engineering, independent development, and doctoral study, all with the goal of teaching technology and helping others grow.</p>
+    </div>
+    <ul class="m-nodes" aria-label="Professional journey"><li>Future Educator</li><li>Doctoral Education</li><li>Software Engineering</li><li>Telecommunications</li></ul>
+  </section>
+  <section class="m-journey" aria-labelledby="journey-title">
+    <h2 id="journey-title">Professional Journey</h2>
+    <ol class="m-tl">
+      <li><time>2014 – 2023</time><i></i><div><strong>Comcast</strong><span>Four technician levels, progressing from CT1 to CT4 and working on business installations and advanced technical support.</span></div></li>
+      <li><time>2023 – Present</time><i></i><div><strong>Software Development</strong><span>Transitioned to software development in June 2023.</span></div></li>
+      <li><time>Ongoing</time><i></i><div><strong>Independent Projects</strong><span>Developing applications such as PresiCompare and Huddle Up.</span></div></li>
+      <li><time>Ongoing</time><i></i><div><strong>Doctoral Studies</strong><span>Pursuing a Doctor of Information Technology at Capella University.</span></div></li>
+      <li><time>Future</time><i></i><div><strong>Teaching Technology</strong><span>Combining my experience and education to teach the next generation.</span></div></li>
+    </ol>
+  </section>
   <div class="inner-page">
-    <p class="kicker">01 / ABOUT BYRON</p>
-    <h1 class="page-heading">Building technology.<br /><span>Continuing to learn.</span></h1>
-    <p class="page-lede">I am a software engineer, Doctor of Information Technology student, and aspiring educator. My path has taken me from hands-on telecommunications service to enterprise software development, with independent software projects connecting my technical work and long-term academic interests.</p>
-
     <section class="intro-grid" aria-label="Professional overview">
       <div class="intro-number"><span>01</span><small>MY APPROACH</small></div>
       <div class="intro-copy">
@@ -14,24 +28,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <p>My career began at Comcast in installation and service, where I advanced through CT1, CT2, CT3, and CT4 roles. The work grew from residential internet and TV service into phone-service troubleshooting and complex installations for business customers. That progression gave me experience with technical problem-solving in real operating environments and an appreciation for the people who rely on technology every day.</p>
         <p>In June 2023, I moved into software development at Comcast. My role involves designing and developing applications with C# and ASP.NET, contributing to technical infrastructure and customer experience. My broader technical work includes SQL Server environments, data integration, debugging, production support, and technical documentation.</p>
         <p>I approach software as more than code alone. Reliable applications depend on understanding the problem, the data, the surrounding systems, and the people who use the result.</p>
-      </div>
-    </section>
-
-    <div class="page-rule"></div>
-
-    <section class="content-grid">
-      <div class="side-label">CAREER PATH</div>
-      <div class="career-path">
-        <article class="career-stage">
-          <div class="stage-meta"><span>2014 - 2023</span><span>TELECOMMUNICATIONS</span></div>
-          <h2>Learning technology in the field</h2>
-          <p>At Comcast, I progressed through four technician levels: CT1, CT2, CT3, and CT4. Each step expanded my responsibilities, from foundational residential internet and TV installation and service, to independent service work, CDV/phone troubleshooting, and advanced installations for business clients.</p>
-        </article>
-        <article class="career-stage">
-          <div class="stage-meta"><span>2023 - PRESENT</span><span>SOFTWARE DEVELOPMENT</span></div>
-          <h2>Building and supporting enterprise applications</h2>
-          <p>As an Engineer 1, Software Development, I work with C# and ASP.NET to develop applications and contribute to Comcast's technical infrastructure. My work also draws on database technologies, integration processes, troubleshooting, and production support.</p>
-        </article>
       </div>
     </section>
 

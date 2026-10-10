@@ -2,10 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Contact | Byron David Lencrerot III" description="Contact Byron David Lencrerot III for professional, academic, and project-related inquiries.">
+  <section class="m-hero light" style="background-image:url('/images/globe.svg')">
+    <div class="m-in">
+      <p class="kicker">06 / CONTACT</p>
+      <h1>Let’s Connect</h1>
+      <p class="lede">I’m interested in opportunities related to software engineering, education, and future teaching. Feel free to reach out.</p>
+      <div class="m-contact" style="margin-top:30px;max-width:620px">
+        <a href="mailto:lencrerotl0@gmail.com"><em>✉</em><span><b>Email</b>Send me a message<br /><u>lencrerotl0@gmail.com</u></span></a>
+        <a href="https://www.linkedin.com/in/byron-lencrerot-mism-340437147/" target="_blank" rel="noreferrer"><em>in</em><span><b>LinkedIn</b>Connect on LinkedIn</span></a>
+      </div>
+    </div>
+  </section>
   <div class="inner-page">
-    <p class="kicker">06 / CONTACT</p>
-    <h1 class="page-heading">Start a<br /><span>conversation.</span></h1>
-    <p class="page-lede">For professional opportunities, academic connections, software projects, or conversations about technology and education, you can reach me directly by email or connect with me on LinkedIn.</p>
     <div class="page-rule"></div>
     <div class="card-grid">
       <article class="info-card"><p class="kicker">EMAIL</p><h3>Direct contact</h3><p>Send a message about professional opportunities, collaboration, or other relevant inquiries.</p><a class="action-link" href="mailto:lencrerotl0@gmail.com">lencrerotl0@gmail.com <span>↗</span></a></article>
@@ -36,8 +44,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .action-link{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:13px 16px;background:#111214;color:#fff;text-decoration:none;font-size:.76rem;font-weight:700}.action-link:hover{background:#36393e}
   @media(max-width:700px){.inner-page{width:calc(100% - 36px);padding:48px 0 70px}.content-grid{grid-template-columns:1fr;gap:16px}.card-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:9px}.page-lede{font-size:.98rem}}
 
-  .inner-page{background-image:radial-gradient(circle at 86% 18%,rgba(27,35,43,.92) 0,rgba(27,35,43,.72) 12%,rgba(245,246,247,0) 32%),linear-gradient(90deg,#f5f6f7 0%,rgba(245,246,247,.98) 58%,rgba(245,246,247,.25) 100%);background-size:100% 430px,100% 430px;background-position:top right;background-repeat:no-repeat}
+  .contact-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.7fr);align-items:center;gap:40px}
+  .contact-intro .page-heading{margin-bottom:22px}
+  .contact-image{display:block;width:100%;height:310px;object-fit:cover;object-position:center;border:1px solid #cbd1d6}
   .card-grid .info-card{min-height:210px;border-top:2px solid #111315}
   .card-grid .action-link{overflow-wrap:anywhere}
+  @media(max-width:760px){.contact-intro{grid-template-columns:1fr;gap:22px}.contact-image{height:220px;grid-row:1}}
 
 </style>
