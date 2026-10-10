@@ -20,7 +20,7 @@ const {
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="/" aria-label="Byron David Lencrerot III home">
+        <a class="brand" href="/" aria-label="Byron David Lencrerot III home" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>
           <span class="brand-mark">B<span>.</span></span>
           <span class="brand-copy"><strong>BYRON DAVID LENCREROT III</strong><small>SOFTWARE ENGINEERING / ACADEMIA</small></span>
         </a>
@@ -61,11 +61,14 @@ const {
   .brand-copy{display:flex;flex-direction:column;gap:2px}
   .brand-copy strong{font-size:.58rem;letter-spacing:.065em;color:#f4f6f8}
   .brand-copy small{font-size:.42rem;letter-spacing:.13em;color:#aab5bf}
+  .brand[aria-current="page"] .brand-copy{position:relative}
+  .brand[aria-current="page"] .brand-copy::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:#fff}
   .site-header nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(13px,2vw,28px);flex-wrap:wrap}
-  .site-header nav a{font-size:.67rem;font-weight:600;color:#e0e5e9;text-decoration:none;position:relative}
+  .site-header nav a{display:inline-flex;align-items:center;min-height:32px;font-size:.67rem;font-weight:600;color:#e0e5e9;text-decoration:none;position:relative}
   .site-header nav a:hover{color:#fff}
   .site-header nav a.active:not(.nav-contact)::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:#fff}
-  .site-header nav .nav-contact{border:1px solid #9ba7b1;color:#fff;padding:7px 12px}
+  .site-header nav .nav-contact{min-height:34px;border:1px solid #9ba7b1;color:#fff;padding:7px 12px}
+  .site-header nav .nav-contact.active{background:#f4f6f8;color:#10161d}
   .site-header nav .nav-contact:hover{background:#fff;color:#10161d}
   .site-header a:focus-visible,a:focus-visible{outline:2px solid #6c8498;outline-offset:3px}
   main{min-height:70vh}
