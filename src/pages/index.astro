@@ -26,23 +26,25 @@ const projects = [
   title="Byron David Lencrerot III | Software Engineer, Doctoral Student"
   description="Professional profile, software projects, and academic interests of Byron David Lencrerot III."
 >
-  <section class="hero page-width">
+  <section class="hero">
     <div class="hero-photo" aria-hidden="true"></div>
-    <div class="hero-main">
-      <p class="eyebrow"><span class="eyebrow-rule"></span> SOFTWARE ENGINEER <span>·</span> DOCTORAL STUDENT <span>·</span> FUTURE EDUCATOR</p>
-      <h1>Byron David<br />Lencrerot <span>III</span></h1>
-      <div class="hero-bottom">
-        <p class="hero-role">Building technology. Solving real problems.<br /><span>Preparing to teach the next generation.</span></p>
-        <div class="hero-intro">
-          <p>Experienced in telecommunications and software engineering, independent developer, and doctoral student in Information Technology with a goal of teaching technology and helping others grow.</p>
-          <div class="hero-links">
-            <a class="button button-black" href="/projects/">View My Work <span aria-hidden="true">→</span></a>
-            <a class="button button-outline" href="/contact/">Contact Me <span aria-hidden="true">→</span></a>
+    <div class="hero-inner page-width">
+      <div class="hero-main">
+        <p class="eyebrow"><span class="eyebrow-rule"></span> SOFTWARE ENGINEER <span>·</span> DOCTORAL STUDENT <span>·</span> FUTURE EDUCATOR</p>
+        <h1>Byron David<br />Lencrerot <span>III</span></h1>
+        <div class="hero-bottom">
+          <p class="hero-role">Building technology. Solving real problems.<br /><span>Preparing to teach the next generation.</span></p>
+          <div class="hero-intro">
+            <p>Experienced in telecommunications and software engineering, independent developer, and doctoral student in Information Technology with a goal of teaching technology and helping others grow.</p>
+            <div class="hero-links">
+              <a class="button button-black" href="/projects/">View My Work <span aria-hidden="true">→</span></a>
+              <a class="button button-outline" href="/contact/">Contact Me <span aria-hidden="true">→</span></a>
+            </div>
           </div>
         </div>
       </div>
+      <div class="hero-identity" aria-hidden="true"><span>B</span><i>.</i></div>
     </div>
-    <div class="hero-identity" aria-hidden="true"><span>B</span><i>.</i></div>
   </section>
 
   <section class="metrics-band">
@@ -59,9 +61,11 @@ const projects = [
 <style>
   :global(:root){--black:#101214;--ink:#17191c;--mid:#646a71;--silver:#9ba1a8;--line:#d7dade;--mist:#f4f5f6;--white:#fff}
   .page-width{width:min(1380px,calc(100% - 80px));margin-inline:auto}
-  .hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.7fr);gap:clamp(28px,5vw,78px);padding-top:clamp(55px,6vw,86px);padding-bottom:clamp(48px,5vw,72px);align-items:center;min-height:510px;overflow:hidden}
-  .hero-photo{position:absolute;z-index:-2;top:0;bottom:0;left:33%;right:-40px;background-image:linear-gradient(90deg,#f4f5f6 0%,rgba(244,245,246,.92) 7%,rgba(244,245,246,.28) 35%,rgba(16,18,20,.1) 70%,rgba(16,18,20,.32) 100%),url('/images/engineering-workspace.png');background-size:cover;background-position:center 55%}
+  .hero{position:relative;isolation:isolate;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.7fr);gap:clamp(28px,5vw,78px);padding-top:clamp(55px,6vw,86px);padding-bottom:clamp(48px,5vw,72px);align-items:center;min-height:510px}
+  .hero-photo{position:absolute;inset:0;z-index:-2;background-image:linear-gradient(90deg,#f4f5f6 0%,rgba(244,245,246,.92) 8%,rgba(244,245,246,.35) 28%,rgba(244,245,246,.12) 52%,rgba(16,18,20,.2) 100%),url('/images/engineering-workspace.jpg');background-size:cover;background-position:center 60%}
   .hero-main{position:relative;z-index:1;min-width:0}
+  .hero-identity{position:relative;z-index:1}
   .eyebrow,.section-rail,.aside-top,.aside-bottom,.metric small,.project-type,.project-tech,.card-index,.card-foot,.education-inner>div>span{font-size:.62rem;letter-spacing:.14em;font-weight:700}
   .eyebrow{color:#4d545b;display:flex;align-items:center;gap:10px;margin:0 0 30px}
   .eyebrow-rule{width:28px;height:2px;background:#17191c}
