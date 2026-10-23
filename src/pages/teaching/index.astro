@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Teaching | Byron David Lencrerot III" description="Teaching interests and planned educational content of Byron David Lencrerot III.">
-  <section class="m-hero light" style="background-image:url('/images/chalkboard.svg')">
+  <section class="m-hero light" style="background-image:url('/images/chalkboard.jpg')" aria-labelledby="teaching-title">
+    <div class="m-hero-fade"></div>
     <div class="m-in">
       <p class="kicker">05 / TEACHING</p>
-      <h1>Helping Others<br />Learn and Grow</h1>
+      <h1 id="teaching-title">Helping Others<br />Learn and Grow</h1>
       <p class="lede">I plan to develop lectures and videos that explain coding concepts in ways children and adults can understand, connecting technical ideas to practical use and real applications.</p>
       <div class="m-actions"><a class="btn dark" href="#planned-content">Explore Teaching Plans <span aria-hidden="true">→</span></a></div>
     </div>
@@ -49,21 +50,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </div>
 </BaseLayout>
 <style>
-  .inner-page{width:min(1120px,calc(100% - 72px));margin:0 auto;padding:62px 0 88px;color:#191b1f}
+  :global(body){background:#fff}
+  .inner-page{width:min(1120px,calc(100% - 72px));margin:0 auto;padding:58px 0 82px;color:#191b1f}
   .content-grid{display:grid;grid-template-columns:190px minmax(0,1fr);gap:46px}
   .side-label{font-size:.65rem;font-weight:700;letter-spacing:.13em;color:#7c8188;margin:5px 0 0}
   .prose h2{font-size:clamp(1.55rem,3vw,2rem);line-height:1.15;letter-spacing:-.04em;margin:0 0 15px}
   .prose p{font-size:.93rem;line-height:1.8;color:#5d626a;margin:0 0 17px}
   .page-rule{height:1px;background:#d9dce0;margin:38px 0}
-  .card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:23px}
-  .info-card{border:1px solid #d9dce0;border-top:2px solid #111315;background:#fff;padding:20px 18px;min-height:154px}
+  .card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:25px;border-top:1px solid #d9dce0;border-bottom:1px solid #d9dce0}
+  .info-card{padding:20px 19px 22px 0;min-width:0}
+  .info-card+.info-card{border-left:1px solid #d9dce0;padding-left:19px}
   .info-card h3{font-size:.96rem;line-height:1.4;letter-spacing:-.02em;margin:0 0 9px}
   .info-card p{font-size:.81rem;line-height:1.7;color:#646971;margin:0}
   .step-number{display:block;font-size:.6rem;letter-spacing:.12em;font-weight:700;color:#777c83;margin-bottom:18px}
-  .teaching-model .info-card{min-height:0}
-  .planned-note{margin-top:38px;padding:28px 30px;background:#10161d;color:#fff;border-left:4px solid #aeb8c2}
+  .planned-note{margin-top:38px;padding:26px 28px;background:#10161d;color:#fff;border-left:4px solid #aeb8c2}
   .planned-note .kicker{font-size:.61rem;letter-spacing:.13em;color:#aeb8c2;margin:0 0 11px}
   .planned-note h2{font-size:1.35rem;letter-spacing:-.03em;margin:0 0 9px}
   .planned-note>p:last-child{max-width:740px;color:#d1d8de;font-size:.87rem;line-height:1.75;margin:0}
-  @media(max-width:760px){.inner-page{width:calc(100% - 36px);padding:42px 0 68px}.content-grid{grid-template-columns:1fr;gap:14px}.card-grid{grid-template-columns:1fr}.page-rule{margin:30px 0}.info-card{min-height:0}.planned-note{margin-top:30px;padding:24px 21px}}
+  @media(max-width:760px){.inner-page{width:calc(100% - 36px);padding:42px 0 68px}.content-grid{grid-template-columns:1fr;gap:14px}.card-grid{grid-template-columns:1fr}.info-card{padding:18px 0}.info-card+.info-card{border-left:0;border-top:1px solid #d9dce0;padding-left:0}.page-rule{margin:30px 0}.planned-note{margin-top:30px;padding:24px 21px}}
 </style>

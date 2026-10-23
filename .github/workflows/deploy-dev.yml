@@ -1,0 +1,54 @@
+
+name: Deploy Personal Website DEV
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  deploy:
+    name: Deploy to DEV Ubuntu Server
+    runs-on: self-hosted
+
+    steps:
+      - name: Check out latest code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static website
+        run: npm run build
+
+      - name: Build Docker image
+        run: docker build -t byron-professional-site:dev .
+
+      - name: Replace development container
+        run: |
+          docker rm -f byron-professional-site-dev || true
+          docker run -d \
+            --name byron-professional-site-dev \
+            --restart unless-stopped \
+            -p 8085:80 \
+            byron-professional-site:dev
+
+      - name: Verify deployment
+        run: |
+          for attempt in $(seq 1 10); do
+            if curl --fail --silent http://localhost:8085/ > /dev/null; then
+              echo "Development website is responding successfully."
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Development website did not respond successfully."
+          docker logs byron-professional-site-dev
+          exit 1
+
