@@ -3,3 +3,40 @@ dist/
 .astro/
 .env
 .DS_Store
+
+# Visual Studio / .NET
+.vs/
+**/.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+*.dbmdl
+*.jfm
+*.pfx
+*.publish.xml
+*.bak
+*.backup
+*.tmp
+
+# Visual Studio Code
+.vscode/
+**/.vscode/
+
+# JetBrains / Copilot-related local editor files
+.idea/
+**/.idea/
+.copilot/
+**/.copilot/
+
+# Windows / OS
+Thumbs.db
+Desktop.ini
