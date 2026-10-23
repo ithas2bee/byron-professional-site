@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About | Byron David Lencrerot III" description="Learn about Byron David Lencrerot III, a software engineer, Doctor of Information Technology student, and aspiring educator.">
-  <section class="m-hero plain" style="background-image:url('/images/journey-landscape.svg')">
+  <section class="m-hero plain" style="background-image:url('/images/journey-landscape.jpg')">
     <div class="m-in">
       <p class="kicker">01 / ABOUT</p>
       <h1>A Journey in Technology,<br />Education, and Problem Solving</h1>
@@ -115,7 +115,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .closing-links a:hover{border-color:#fff}
   @media(max-width:760px){.inner-page{width:calc(100% - 36px);padding:48px 0 70px}.intro-grid,.content-grid{grid-template-columns:1fr;gap:17px}.intro-grid{margin-top:42px}.intro-number{flex-direction:row;align-items:center;gap:14px}.intro-number span{font-size:1.7rem}.page-rule{margin:36px 0}.degree-grid{grid-template-columns:1fr}.degree-card{min-height:0}.degree-year{margin-bottom:14px}.independent-work{grid-template-columns:1fr;gap:10px}.closing-panel{padding:27px 23px;margin-top:40px}.closing-links{gap:15px}}
 
-  .inner-page{background-image:linear-gradient(90deg,#f5f6f7 0%,rgba(245,246,247,.97) 34%,rgba(245,246,247,.78) 54%,rgba(16,18,20,.10) 100%),url('/images/engineering-workspace.png');background-size:100% 410px,58% 410px;background-position:top right;background-repeat:no-repeat}
+  .inner-page{background-image:linear-gradient(90deg,#f5f6f7 0%,rgba(245,246,247,.97) 34%,rgba(245,246,247,.78) 54%,rgba(16,18,20,.10) 100%);background-size:100% 410px;background-position:top right;background-repeat:no-repeat}
   .inner-page>.kicker:first-child{padding-top:6px}
   .intro-grid{border-top:1px solid #cfd4d9;padding-top:22px}
   .career-stage{padding:28px 24px;background:#fff;border-bottom:1px solid #d7dce0}
@@ -124,6 +124,5 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .closing-panel{background:#111315;color:#fff;padding:34px;margin-top:48px}
   .closing-panel h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.02;letter-spacing:-.06em}
   .closing-panel p:not(.section-eyebrow){color:#c5cbd1}
-  @media(max-width:760px){.inner-page{background-size:100% 330px,100% 330px}}
 
 </style>
