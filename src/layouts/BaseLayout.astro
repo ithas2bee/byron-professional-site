@@ -24,7 +24,26 @@ const {
           <span class="brand-mark">B<span>.</span></span>
           <span class="brand-copy"><strong>BYRON DAVID LENCREROT III</strong><small>SOFTWARE ENGINEERING / ACADEMIA</small></span>
         </a>
-        <nav aria-label="Main navigation">
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/about/" class:list={{ active: Astro.url.pathname.startsWith('/about') }} aria-current={Astro.url.pathname.startsWith('/about') ? 'page' : undefined}>Profile</a>
+          <a href="/projects/" class:list={{ active: Astro.url.pathname.startsWith('/projects') }} aria-current={Astro.url.pathname.startsWith('/projects') ? 'page' : undefined}>Projects</a>
+          <a href="/academia/" class:list={{ active: Astro.url.pathname.startsWith('/academia') }} aria-current={Astro.url.pathname.startsWith('/academia') ? 'page' : undefined}>Academia</a>
+          <a href="/teaching/" class:list={{ active: Astro.url.pathname.startsWith('/teaching') }} aria-current={Astro.url.pathname.startsWith('/teaching') ? 'page' : undefined}>Teaching</a>
+          <a href="/resume/" class:list={{ active: Astro.url.pathname.startsWith('/resume') }} aria-current={Astro.url.pathname.startsWith('/resume') ? 'page' : undefined}>Résumé</a>
+          <a class="nav-contact" href="/contact/" class:list={{ active: Astro.url.pathname.startsWith('/contact') }} aria-current={Astro.url.pathname.startsWith('/contact') ? 'page' : undefined}>Contact ↗</a>
+        </nav>
+
+        <button class="mobile-nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-menu">
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+
+      <div id="mobile-nav-menu" class="mobile-nav-menu" hidden>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
           <a href="/about/" class:list={{ active: Astro.url.pathname.startsWith('/about') }} aria-current={Astro.url.pathname.startsWith('/about') ? 'page' : undefined}>Profile</a>
           <a href="/projects/" class:list={{ active: Astro.url.pathname.startsWith('/projects') }} aria-current={Astro.url.pathname.startsWith('/projects') ? 'page' : undefined}>Projects</a>
           <a href="/academia/" class:list={{ active: Astro.url.pathname.startsWith('/academia') }} aria-current={Astro.url.pathname.startsWith('/academia') ? 'page' : undefined}>Academia</a>
@@ -43,6 +62,51 @@ const {
         <span>© {new Date().getFullYear()}</span>
       </div>
     </footer>
+
+    <script>
+      const mobileToggle = document.querySelector('.mobile-nav-toggle');
+      const mobileMenu = document.getElementById('mobile-nav-menu');
+
+      if (mobileToggle && mobileMenu) {
+        const closeMenu = () => {
+          mobileMenu.hidden = true;
+          mobileMenu.classList.remove('is-open');
+          mobileToggle.classList.remove('is-open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.setAttribute('aria-label', 'Open navigation menu');
+        };
+
+        const openMenu = () => {
+          mobileMenu.hidden = false;
+          mobileMenu.classList.add('is-open');
+          mobileToggle.classList.add('is-open');
+          mobileToggle.setAttribute('aria-expanded', 'true');
+          mobileToggle.setAttribute('aria-label', 'Close navigation menu');
+        };
+
+        mobileToggle.addEventListener('click', () => {
+          const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+          if (isExpanded) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && mobileToggle.getAttribute('aria-expanded') === 'true') {
+            closeMenu();
+            mobileToggle.focus();
+          }
+        });
+
+        closeMenu();
+      }
+    </script>
   </body>
 </html>
 <style is:global>
@@ -54,7 +118,7 @@ const {
   img{max-width:100%}
   ::selection{background:#bac6d1;color:#10161d}
   .site-header{background:#10161d;color:#f7f8fa;border-bottom:1px solid #35414b;position:relative;z-index:5}
-  .header-inner{width:min(var(--page-max),calc(100% - 72px));min-height:66px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .header-inner{width:min(var(--page-max),calc(100% - 72px));min-height:66px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto}
   .brand-mark{width:27px;height:27px;display:grid;place-items:center;background:#f4f6f8;border:1px solid #aeb8c2;color:#10161d;font-size:.9rem;font-weight:750;letter-spacing:-.08em}
   .brand-mark span{color:#697581}
@@ -63,14 +127,30 @@ const {
   .brand-copy small{font-size:.42rem;letter-spacing:.13em;color:#aab5bf}
   .brand[aria-current="page"] .brand-copy{position:relative}
   .brand[aria-current="page"] .brand-copy::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:#fff}
-  .site-header nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(13px,2vw,28px);flex-wrap:wrap}
-  .site-header nav a{display:inline-flex;align-items:center;min-height:32px;font-size:.67rem;font-weight:600;color:#e0e5e9;text-decoration:none;position:relative}
-  .site-header nav a:hover{color:#fff}
-  .site-header nav a.active:not(.nav-contact)::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:#fff}
-  .site-header nav .nav-contact{min-height:34px;border:1px solid #9ba7b1;color:#fff;padding:7px 12px}
-  .site-header nav .nav-contact.active{background:#f4f6f8;color:#10161d}
-  .site-header nav .nav-contact:hover{background:#fff;color:#10161d}
-  .site-header a:focus-visible,a:focus-visible{outline:2px solid #6c8498;outline-offset:3px}
+  .site-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(13px,2vw,28px);flex-wrap:wrap}
+  .site-nav a{display:inline-flex;align-items:center;min-height:32px;font-size:.67rem;font-weight:600;color:#e0e5e9;text-decoration:none;position:relative}
+  .site-nav a:hover{color:#fff}
+  .site-nav a.active:not(.nav-contact)::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:#fff}
+  .site-nav .nav-contact{min-height:34px;border:1px solid #9ba7b1;color:#fff;padding:7px 12px}
+  .site-nav .nav-contact.active{background:#f4f6f8;color:#10161d}
+  .site-nav .nav-contact:hover{background:#fff;color:#10161d}
+  .mobile-nav-toggle{display:none;align-items:center;justify-content:center;width:40px;height:36px;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;cursor:pointer;padding:0}
+  .menu-icon{position:relative;display:inline-block;width:16px;height:12px}
+  .menu-icon span{position:absolute;left:0;width:100%;height:2px;background:#fff;border-radius:2px;transition:transform .2s ease,opacity .2s ease,top .2s ease}
+  .menu-icon span:nth-child(1){top:0}
+  .menu-icon span:nth-child(2){top:5px}
+  .menu-icon span:nth-child(3){top:10px}
+  .mobile-nav-toggle.is-open .menu-icon span:nth-child(1){top:5px;transform:rotate(45deg)}
+  .mobile-nav-toggle.is-open .menu-icon span:nth-child(2){opacity:0}
+  .mobile-nav-toggle.is-open .menu-icon span:nth-child(3){top:5px;transform:rotate(-45deg)}
+  .mobile-nav-menu{display:none;position:absolute;left:16px;right:16px;top:calc(100% + 8px);background:#10161d;border:1px solid #364254;box-shadow:0 18px 35px rgba(0,0,0,.15);z-index:20}
+  .mobile-nav-menu[hidden]{display:none}
+  .mobile-nav{display:flex;flex-direction:column}
+  .mobile-nav a{display:block;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08);color:#edf1f4;text-decoration:none;font-size:.9rem;font-weight:600}
+  .mobile-nav a:last-child{border-bottom:0}
+  .mobile-nav a.active:not(.nav-contact)::after{display:none}
+  .mobile-nav .nav-contact{margin:0;border-top:1px solid rgba(255,255,255,.08);background:#f4f6f8;color:#10161d}
+  .site-header a:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #6c8498;outline-offset:3px}
   main{min-height:70vh}
   .site-footer{background:#10161d;color:#c6cdd3;border-top:1px solid #35414b}
   .footer-inner{width:min(var(--page-max),calc(100% - 72px));min-height:68px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.55rem;letter-spacing:.08em;color:#aeb8c2}
@@ -78,6 +158,7 @@ const {
   .footer-inner>a:not(.footer-brand){text-decoration:none}
   .footer-inner>a:hover{color:#fff}
   .page-width{width:min(var(--page-max),calc(100% - 72px));margin-inline:auto}
+  .mobile-nav-menu.is-open{display:block}
   .inner-page{width:min(1280px,calc(100% - 72px));margin:0 auto;padding:58px 0 88px}
   .kicker,.eyebrow{font-size:.61rem;line-height:1.5;letter-spacing:.13em;font-weight:700}
   .page-heading{font-size:clamp(2.5rem,5vw,4.7rem);line-height:.98;letter-spacing:-.055em;font-weight:650}
@@ -111,10 +192,27 @@ const {
   .m-projects{width:min(1380px,calc(100% - 80px));margin:0 auto;padding:50px 0;display:grid;grid-template-columns:minmax(220px,.6fr) 1fr 1fr;gap:20px;align-items:stretch}
   .m-projects .intro h1{font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.1;letter-spacing:-.02em;font-weight:600;margin:12px 0 18px}
   .m-card{position:relative;overflow:hidden;color:#fff;background:#10161d center/cover;padding:210px 22px 22px;display:flex;flex-direction:column;justify-content:flex-end;min-height:320px;border:1px solid #394650;border-radius:18px}
-  @media(max-width:760px){.header-inner,.footer-inner{width:calc(100% - 32px)}.header-inner{min-height:0;padding:10px 0;gap:12px;align-items:flex-start}.site-header nav{width:100%;justify-content:flex-start;gap:8px 12px;flex-wrap:wrap}.site-header nav a{font-size:.58rem;min-height:24px}.site-header nav .nav-contact{padding:6px 9px}.brand-copy strong{font-size:.5rem}.brand-copy small{font-size:.38rem}.inner-page,.page-width{width:calc(100% - 32px)}.inner-page{padding-top:42px}.site-footer .footer-inner{padding:15px 0;align-items:flex-start;flex-direction:column}}
-  @media(max-width:540px){.header-inner{flex-direction:column;align-items:flex-start}.brand{width:100%}.site-header nav{width:100%;justify-content:space-between;gap:8px}.site-header nav a{flex:1 1 calc(50% - 8px);justify-content:center;text-align:center;padding:6px 8px;border:1px solid rgba(255,255,255,.08)}.site-header nav .nav-contact{flex:1 1 calc(50% - 8px)}}
-  @media(max-width:430px){.site-header nav{gap:8px}.site-header nav a{flex-basis:100%}}
-  @media(max-width:760px){.site-header nav a{font-size:.57rem}}
+  @media(max-width:760px){
+    .header-inner,.footer-inner{width:calc(100% - 32px)}
+    .header-inner{min-height:0;padding:10px 0;gap:12px;align-items:center}
+    .site-nav{display:none}
+    .mobile-nav-toggle{display:inline-flex}
+    .brand{flex:1 1 auto;min-width:0}
+    .brand-copy strong{font-size:.5rem}
+    .brand-copy small{font-size:.38rem}
+    .inner-page,.page-width{width:calc(100% - 32px)}
+    .inner-page{padding-top:42px}
+    .site-footer .footer-inner{padding:15px 0;align-items:flex-start;flex-direction:column}
+  }
+  @media(max-width:540px){
+    .header-inner{padding:11px 0}
+    .brand{min-width:0}
+    .brand-copy strong{letter-spacing:.04em}
+  }
+  @media(max-width:430px){
+    .brand-copy strong{font-size:.46rem}
+    .brand-copy small{font-size:.34rem}
+  }
 
 
   .m-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,18,.1) 0,rgba(10,14,18,.85) 190px,#10161d 260px)}
