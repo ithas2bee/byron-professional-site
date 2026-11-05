@@ -1,0 +1,53 @@
+
+name: Deploy Personal Website STAGING
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    name: Deploy to STAGING Ubuntu Server
+    runs-on: self-hosted
+
+    steps:
+      - name: Check out latest code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static website
+        run: npm run build
+
+      - name: Build Docker image
+        run: docker build -t byron-professional-site:staging .
+
+      - name: Replace staging container
+        run: |
+          docker rm -f byron-professional-site-staging || true
+          docker run -d \
+            --name byron-professional-site-staging \
+            --restart unless-stopped \
+            -p 8086:80 \
+            byron-professional-site:staging
+
+      - name: Verify deployment
+        run: |
+          for attempt in $(seq 1 10); do
+            if curl --fail --silent http://localhost:8086/ > /dev/null; then
+              echo "Staging website is responding successfully."
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Staging website did not respond successfully."
+          docker logs byron-professional-site-staging
+          exit 1
