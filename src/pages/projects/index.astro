@@ -1,25 +1,57 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, a historical data analysis platform, and Huddle Up, a community coordination mobile application.">
+<BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, Huddle Up, and ScholarDesk, a local-first academic productivity desktop application.">
   <section class="m-projects" aria-label="Projects overview">
     <div class="intro">
       <p class="kicker">02 / PROJECTS</p>
       <h1>Software Projects<br />with Real Impact</h1>
       <p class="page-lede">Independent applications built to solve real problems, explore ideas, and demonstrate practical software engineering skills.</p>
     </div>
-    <article class="m-card" style="background-image:url('/images/presicompare.jpg')">
-      <h2>PresiCompare</h2>
-      <p>A web application for comparing presidential terms using public data, without scoring or declaring a winner.</p>
-      <div class="tags"><span>Web Application</span><span>Data Integration</span><span>User Experience</span></div>
-      <a class="btn" href="#presicompare-title">View Project <span aria-hidden="true">→</span></a>
-    </article>
-    <article class="m-card" style="background-image:url('/images/huddle-up.jpg');background-position:left center">
-      <h2>Huddle Up</h2>
-      <p>A community coordination mobile application built with React Native, Expo, and an ASP.NET Core API.</p>
-      <div class="tags"><span>Mobile Application</span><span>React Native</span><span>ASP.NET Core</span></div>
-      <a class="btn" href="#huddle-up">View Project <span aria-hidden="true">→</span></a>
-    </article>
+    <div class="project-carousel" aria-label="Featured projects">
+      <div class="project-carousel-viewport">
+        <div class="project-carousel-track" style="--slide-index:0" aria-live="off">
+          <article class="m-card" aria-label="Project 1 of 3">
+            <img class="project-card-image" src="/images/presicompare.jpg" alt="PresiCompare project preview" />
+            <div class="project-card-content">
+              <h2>PresiCompare</h2>
+              <p>A web application for comparing presidential terms using public data, without scoring or declaring a winner.</p>
+              <div class="tags"><span>Web Application</span><span>Data Integration</span><span>User Experience</span></div>
+              <a class="btn" href="#presicompare-title">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="m-card" aria-label="Project 2 of 3" inert aria-hidden="true">
+            <img class="project-card-image" src="/images/huddle-up.jpg" alt="Huddle Up project preview" />
+            <div class="project-card-content">
+              <h2>Huddle Up</h2>
+              <p>A community coordination mobile application built with React Native, Expo, and an ASP.NET Core API.</p>
+              <div class="tags"><span>Mobile Application</span><span>React Native</span><span>ASP.NET Core</span></div>
+              <a class="btn" href="#huddle-up" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="m-card" aria-label="Project 3 of 3" inert aria-hidden="true">
+            <img class="project-card-image" src="/images/scholardesk-visit.jpg" alt="ScholarDesk project preview" />
+            <div class="project-card-content">
+              <h2>ScholarDesk</h2>
+              <p>A local-first academic productivity desktop application for organizing coursework and research.</p>
+              <div class="tags"><span>Desktop Application</span><span>Python</span><span>SQLite</span></div>
+              <a class="btn" href="#scholardesk" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="project-carousel-controls" aria-label="Project carousel controls">
+        <button class="carousel-arrow" type="button" data-carousel-previous aria-label="Previous project">←</button>
+        <div class="carousel-pagination" aria-label="Choose a project">
+          <button type="button" aria-label="Show PresiCompare" aria-current="true" data-carousel-slide="0"></button>
+          <button type="button" aria-label="Show Huddle Up" aria-current="false" data-carousel-slide="1"></button>
+          <button type="button" aria-label="Show ScholarDesk" aria-current="false" data-carousel-slide="2"></button>
+        </div>
+        <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next project">→</button>
+        <button class="carousel-pause" type="button" data-carousel-pause aria-label="Pause automatic slide rotation">Pause</button>
+      </div>
+      <p class="visually-hidden" data-carousel-status aria-live="polite">Showing PresiCompare, project 1 of 3.</p>
+    </div>
   </section>
   <div class="projects-page">
     <section class="case-study presi" aria-labelledby="presicompare-title">
@@ -131,6 +163,57 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
     </section>
 
+    <section id="scholardesk" class="case-study scholardesk" aria-labelledby="scholardesk-title">
+      <div class="case-index">
+        <span class="index-number">03</span>
+        <span class="case-status"><i class="status-dot"></i> LIVE PRODUCT</span>
+      </div>
+      <div class="case-content">
+        <div class="case-heading">
+          <div>
+            <p class="eyebrow">ACADEMIC ORGANIZATION • RESEARCH • LOCAL-FIRST</p>
+            <h2 id="scholardesk-title">ScholarDesk</h2>
+          </div>
+          <a class="text-link" href="https://scholardeskapp.com" target="_blank" rel="noopener noreferrer">Visit product website <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="case-lede">ScholarDesk is a local-first academic productivity desktop application that helps students organize coursework, manage research materials, and structure literature review workflows. The Windows application stores user data locally in SQLite; its separate product website provides product information and download access.</p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-number">01 / ORGANIZE</span>
+            <h3>Course folders</h3>
+            <p>Creates a consistent structure for course materials and academic work, reducing repetitive manual folder setup.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">02 / RESEARCH</span>
+            <h3>Sources and literature</h3>
+            <p>Provides a research source library and literature map to help students organize materials and relationships between sources.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">03 / CAPTURE</span>
+            <h3>Academic notes</h3>
+            <p>Keeps notes within the same desktop workspace as coursework and research organization.</p>
+          </article>
+        </div>
+        <div class="architecture">
+          <div class="architecture-label">PRODUCT ARCHITECTURE</div>
+          <div class="architecture-flow">
+            <span>Python / Tkinter desktop app</span><b>→</b>
+            <span>SQLite local data</span><b>·</b>
+            <span>Separate React / Vite product website</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="stack-block">
+            <span class="eyebrow">TECHNOLOGY &amp; DISTRIBUTION</span>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">SQLite</span><span class="tag">PyInstaller</span><span class="tag">Velopack</span><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">GitHub Actions</span>
+            </div>
+          </div>
+          <div class="repo-note"><span class="eyebrow">PRODUCT ACCESS</span><p>The public website and Windows application are separate deliverables, with independent deployment and release infrastructure.</p></div>
+        </div>
+      </div>
+    </section>
+
     <section class="closing-panel">
       <p class="eyebrow">HOW I APPROACH BUILDING</p>
       <h2>Make the system work.<br /><span>Make the details trustworthy.</span></h2>
@@ -139,8 +222,120 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </div>
 </BaseLayout>
 
+<script>
+  const carousel = document.querySelector('.project-carousel');
+
+  if (carousel) {
+    const track = carousel.querySelector('.project-carousel-track');
+    const slides = Array.from(track.querySelectorAll('.m-card'));
+    const pagination = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+    const status = carousel.querySelector('[data-carousel-status]');
+    const pauseButton = carousel.querySelector('[data-carousel-pause]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const names = ['PresiCompare', 'Huddle Up', 'ScholarDesk'];
+    let activeSlide = 0;
+    let rotationTimer;
+    let paused = reducedMotion.matches;
+
+    const showSlide = (index) => {
+      activeSlide = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${activeSlide * 100}%)`;
+
+      slides.forEach((slide, slideIndex) => {
+        const inactive = slideIndex !== activeSlide;
+        slide.inert = inactive;
+        slide.setAttribute('aria-hidden', String(inactive));
+        slide.querySelector('.btn').tabIndex = inactive ? -1 : 0;
+      });
+
+      pagination.forEach((button, slideIndex) => {
+        button.setAttribute('aria-current', String(slideIndex === activeSlide));
+      });
+
+      status.textContent = `Showing ${names[activeSlide]}, project ${activeSlide + 1} of ${slides.length}.`;
+    };
+
+    const stopRotation = () => window.clearInterval(rotationTimer);
+    const startRotation = () => {
+      stopRotation();
+      if (!paused && !document.hidden && !reducedMotion.matches) {
+        rotationTimer = window.setInterval(() => showSlide(activeSlide + 1), 6000);
+      }
+    };
+
+    carousel.querySelector('[data-carousel-previous]').addEventListener('click', () => {
+      showSlide(activeSlide - 1);
+      startRotation();
+    });
+    carousel.querySelector('[data-carousel-next]').addEventListener('click', () => {
+      showSlide(activeSlide + 1);
+      startRotation();
+    });
+    pagination.forEach((button) => {
+      button.addEventListener('click', () => {
+        showSlide(Number(button.dataset.carouselSlide));
+        startRotation();
+      });
+    });
+    pauseButton.addEventListener('click', () => {
+      paused = !paused;
+      pauseButton.textContent = paused ? 'Play' : 'Pause';
+      pauseButton.setAttribute('aria-label', paused ? 'Resume automatic slide rotation' : 'Pause automatic slide rotation');
+      startRotation();
+    });
+    carousel.addEventListener('mouseenter', stopRotation);
+    carousel.addEventListener('mouseleave', startRotation);
+    carousel.addEventListener('focusin', stopRotation);
+    carousel.addEventListener('focusout', (event) => {
+      if (!carousel.contains(event.relatedTarget)) startRotation();
+    });
+    document.addEventListener('visibilitychange', startRotation);
+    reducedMotion.addEventListener('change', (event) => {
+      if (event.matches) {
+        paused = true;
+        pauseButton.textContent = 'Play';
+        pauseButton.setAttribute('aria-label', 'Resume automatic slide rotation');
+      }
+      startRotation();
+    });
+
+    showSlide(activeSlide);
+    if (paused) {
+      pauseButton.textContent = 'Play';
+      pauseButton.setAttribute('aria-label', 'Resume automatic slide rotation');
+    }
+    startRotation();
+  }
+</script>
+
 <style>
   :global(body){background:#fff}
+  .m-projects.m-projects{width:100%;max-width:none;margin:0;padding:54px max(16px,calc((100% - 1120px)/2)) 44px;background:#f2f4f6;display:flex;flex-direction:column;align-items:center;gap:22px;border-bottom:1px solid #dfe3e7}
+  .m-projects .intro{width:100%;max-width:760px;text-align:center;padding:26px 32px 24px;background:#fff;border:1px solid #dce1e5;border-radius:18px}
+  .m-projects .intro .kicker{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px;color:#68717a}
+  .m-projects .intro .kicker::before,.m-projects .intro .kicker::after{content:"";width:24px;height:1px;background:#b9c1c8}
+  .m-projects .intro h1{margin:0 auto 16px}
+  .m-projects .intro .page-lede{max-width:640px;margin:0 auto}
+  .project-carousel{width:100%;max-width:860px;min-width:0;margin-inline:auto}
+  .project-carousel-viewport{overflow:hidden;border-radius:18px}
+  .project-carousel-track{display:flex;width:100%;transition:transform .75s cubic-bezier(.22,.61,.36,1);will-change:transform}
+  .project-carousel-track>.m-card{flex:0 0 100%;min-width:0}
+  .project-carousel.project-carousel .m-card{min-height:0;padding:0;background:#10161d;border-color:#d0d6dc}
+  .project-carousel .project-card-image{display:block;width:100%;aspect-ratio:16/7;height:auto;object-fit:cover;background:#10161d}
+  .project-carousel .project-card-content{position:relative;padding:22px 24px 24px;background:#10161d}
+  .project-carousel .m-card::before{display:none}
+  .project-carousel .project-card-content h2{margin:0 0 4px;font-size:1.35rem}
+  .project-carousel .project-card-content p{margin:0 0 12px;color:#d1d8de;font-size:.8rem;line-height:1.55}
+  .project-carousel-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
+  .carousel-arrow,.carousel-pause,.carousel-pagination button{border:1px solid #cbd2d9;background:#fff;color:#111820;cursor:pointer}
+  .carousel-arrow{width:36px;height:34px;font-size:1.15rem;line-height:1}
+  .carousel-pagination{display:flex;align-items:center;gap:8px}
+  .carousel-pagination button{width:8px;height:8px;padding:0;border-radius:50%;background:#aeb8c2}
+  .carousel-pagination button[aria-current="true"]{width:22px;border-radius:5px;background:#10161d}
+  .carousel-pause{padding:7px 10px;font-size:.68rem;font-weight:650}
+  .carousel-arrow:hover,.carousel-pause:hover{background:#edf0f2}
+  .carousel-arrow:focus-visible,.carousel-pause:focus-visible,.carousel-pagination button:focus-visible{outline:2px solid #6c8498;outline-offset:3px}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   .projects-page{width:min(1160px,calc(100% - 72px));margin:0 auto;padding:70px 0 100px;color:#17191d}
   .project-intro{padding:0 0 42px;border-bottom:1px solid #d9dce0}
   .eyebrow{margin:0 0 15px;font-size:.65rem;line-height:1.5;font-weight:750;letter-spacing:.15em;color:#737982}
@@ -188,7 +383,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .closing-panel .eyebrow{color:#b7bbc1}
   .closing-panel h2{font-size:clamp(2rem,4.5vw,3.8rem);line-height:1.02;letter-spacing:-.06em;margin:0 0 20px}
   .closing-panel>p:last-child{max-width:800px;color:#c6c9ce;font-size:.9rem;line-height:1.9;margin:0}
+  @media(max-width:600px){.m-projects.m-projects{padding:36px 16px 30px;gap:18px}.m-projects .intro{padding:22px 18px 20px}.project-carousel .project-card-image{aspect-ratio:4/3}.project-carousel .project-card-content{padding:19px 18px 20px}.project-carousel-controls{gap:10px}}
   @media(max-width:800px){.projects-page{width:calc(100% - 40px);padding:48px 0 70px}.case-study{grid-template-columns:1fr;gap:22px;padding:38px 0}.case-index{flex-direction:row;align-items:center;justify-content:space-between}.index-number{font-size:2.3rem}.feature-grid{grid-template-columns:1fr}.feature,.feature+.feature{padding:17px 0;border-left:0}.feature+.feature{border-top:1px solid #d9dce0}.project-footer{grid-template-columns:1fr;gap:22px}.repo-note{border-left:0;border-top:1px solid #d9dce0;padding:18px 0 0}.architecture-flow{align-items:stretch;flex-direction:column}.architecture-flow b{transform:rotate(90deg);align-self:center}.case-heading{align-items:flex-start;flex-direction:column}.intro-meta{flex-direction:column}.closing-panel{padding:24px}}
+  @media(prefers-reduced-motion:reduce){.project-carousel-track{transition:none}}
 
   .project-intro{position:relative;isolation:isolate;background-image:linear-gradient(90deg,rgba(16,18,20,.97) 0%,rgba(16,18,20,.92) 42%,rgba(16,18,20,.58) 100%),url('/images/engineering-workspace.png');background-size:cover;background-position:center 52%;border-bottom:1px solid #363c42}
   .project-intro h1{font-size:clamp(3.4rem,7vw,6.5rem);max-width:850px}
