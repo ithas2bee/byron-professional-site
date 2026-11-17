@@ -1,17 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, Huddle Up, and ScholarDesk, a local-first academic productivity desktop application.">
+<BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, Huddle Up, ScholarDesk, Kokishin, Little Ask, and AEGIS.">
   <section class="m-projects" aria-label="Projects overview">
-    <div class="intro">
-      <p class="kicker">02 / PROJECTS</p>
-      <h1>Software Projects<br />with Real Impact</h1>
-      <p class="page-lede">Independent applications built to solve real problems, explore ideas, and demonstrate practical software engineering skills.</p>
+    <div class="projects-heading">
+      <div class="intro">
+        <p class="kicker">02 / PROJECTS</p>
+        <h1>Software Projects with Real Impact</h1>
+      </div>
+      <div class="project-filters" role="group" aria-label="Filter projects by platform">
+        <button type="button" class="project-filter" data-project-filter="all" aria-pressed="true">All <span data-filter-count="all">(6)</span></button>
+        <button type="button" class="project-filter" data-project-filter="web" aria-pressed="false">Web Apps <span data-filter-count="web">(3)</span></button>
+        <button type="button" class="project-filter" data-project-filter="mobile" aria-pressed="false">Mobile <span data-filter-count="mobile">(2)</span></button>
+        <button type="button" class="project-filter" data-project-filter="desktop" aria-pressed="false">Desktop <span data-filter-count="desktop">(1)</span></button>
+      </div>
     </div>
-    <div class="project-carousel" aria-label="Featured projects">
+    <div class="project-carousel" aria-label="Featured projects" data-initial-project="AEGIS">
       <div class="project-carousel-viewport">
         <div class="project-carousel-track" style="--slide-index:0" aria-live="off">
-          <article class="m-card" aria-label="Project 1 of 3">
+          <article class="m-card" data-category="web" aria-label="Project 1 of 6">
             <img class="project-card-image" src="/images/presicompare.jpg" alt="PresiCompare project preview" />
             <div class="project-card-content">
               <h2>PresiCompare</h2>
@@ -20,7 +27,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#presicompare-title">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
-          <article class="m-card" aria-label="Project 2 of 3" inert aria-hidden="true">
+          <article class="m-card" data-category="mobile" aria-label="Project 2 of 6" inert aria-hidden="true">
             <img class="project-card-image" src="/images/huddle-up.jpg" alt="Huddle Up project preview" />
             <div class="project-card-content">
               <h2>Huddle Up</h2>
@@ -29,7 +36,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#huddle-up" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
-          <article class="m-card" aria-label="Project 3 of 3" inert aria-hidden="true">
+          <article class="m-card" data-category="desktop" aria-label="Project 3 of 6" inert aria-hidden="true">
             <img class="project-card-image" src="/images/scholardesk-visit.jpg" alt="ScholarDesk project preview" />
             <div class="project-card-content">
               <h2>ScholarDesk</h2>
@@ -38,19 +45,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#scholardesk" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
+          <article class="m-card" data-category="web" aria-label="Project 4 of 6" inert aria-hidden="true">
+            <img class="project-card-image" src="/images/kokishin.jpg" alt="Kokishin teaching and learning platform preview" />
+            <div class="project-card-content">
+              <h2>Kokishin</h2>
+              <p>A teaching and learning management platform, currently establishing its backend foundation.</p>
+              <div class="tags"><span>Learning Platform</span><span>.NET 10</span><span>Clean Architecture</span></div>
+              <a class="btn" href="#kokishin" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="m-card" data-category="mobile" aria-label="Project 5 of 6" inert aria-hidden="true">
+            <img class="project-card-image" src="/images/little-ask.jpg" alt="Little Ask parent and child mobile app preview" />
+            <div class="project-card-content">
+              <h2>Little Ask</h2>
+              <p>A mobile app in development to help children and parents ask each other for quality time.</p>
+              <div class="tags"><span>Mobile Application</span><span>Flutter</span><span>NestJS</span></div>
+              <a class="btn" href="#little-ask" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="m-card" data-category="web" aria-label="Project 6 of 6" inert aria-hidden="true">
+            <img class="project-card-image" src="/images/aeigis.jpg" alt="AEGIS ticket automation system preview" />
+            <div class="project-card-content">
+              <h2>AEGIS</h2>
+              <p>An application monitoring and incident management system designed to detect issues and automate ticket creation.</p>
+              <div class="tags"><span>Monitoring</span><span>Incident Management</span><span>Ticket Automation</span></div>
+              <a class="btn" href="#aegis" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
         </div>
       </div>
       <div class="project-carousel-controls" aria-label="Project carousel controls">
         <button class="carousel-arrow" type="button" data-carousel-previous aria-label="Previous project">←</button>
-        <div class="carousel-pagination" aria-label="Choose a project">
-          <button type="button" aria-label="Show PresiCompare" aria-current="true" data-carousel-slide="0"></button>
-          <button type="button" aria-label="Show Huddle Up" aria-current="false" data-carousel-slide="1"></button>
-          <button type="button" aria-label="Show ScholarDesk" aria-current="false" data-carousel-slide="2"></button>
-        </div>
+        <div class="carousel-pagination" aria-label="Choose a project" data-carousel-pagination></div>
         <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next project">→</button>
         <button class="carousel-pause" type="button" data-carousel-pause aria-label="Pause automatic slide rotation">Pause</button>
       </div>
-      <p class="visually-hidden" data-carousel-status aria-live="polite">Showing PresiCompare, project 1 of 3.</p>
+      <p class="visually-hidden" data-carousel-status aria-live="polite">Showing AEGIS, project 6 of 6.</p>
+      <nav class="project-name-selector" aria-label="Select a featured project" data-project-selector></nav>
     </div>
   </section>
   <div class="projects-page">
@@ -214,10 +245,156 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
     </section>
 
+    <section id="kokishin" class="case-study kokishin" aria-labelledby="kokishin-title">
+      <div class="case-index">
+        <span class="index-number">04</span>
+        <span class="case-status"><i class="status-dot in-progress"></i> IN DEVELOPMENT</span>
+      </div>
+      <div class="case-content">
+        <div class="case-heading">
+          <div>
+            <p class="eyebrow">TEACHING • LEARNING • COURSE MANAGEMENT</p>
+            <h2 id="kokishin-title">Kokishin</h2>
+          </div>
+          <span class="platform-label">Backend foundation in progress</span>
+        </div>
+        <p class="case-lede">Kokishin is a Canvas-inspired teaching and learning management platform for organizing courses, instructional materials, learning activities, assessments, and feedback. Development is currently focused on the backend foundation; the React and TypeScript frontend is planned, not yet presented as implemented.</p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-number">01 / ORGANIZE</span>
+            <h3>Course structure</h3>
+            <p>The platform is being designed to support organized course materials and instructional delivery for educators and learners.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">02 / ASSESS</span>
+            <h3>Learning activities</h3>
+            <p>Assessments and feedback are part of the planned teaching and learning workflow as the product develops.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">03 / ARCHITECT</span>
+            <h3>Clean Architecture</h3>
+            <p>Separate API, Application, Domain, and Infrastructure layers keep business rules independent from delivery and persistence details.</p>
+          </article>
+        </div>
+        <div class="architecture">
+          <div class="architecture-label">CURRENT TECHNICAL FOUNDATION</div>
+          <div class="architecture-flow">
+            <span>ASP.NET Core Web API</span><b>→</b>
+            <span>Application / Domain</span><b>→</b>
+            <span>EF Core / SQLite</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="stack-block">
+            <span class="eyebrow">CURRENT &amp; PLANNED TECHNOLOGY</span>
+            <div class="tag-row">
+              <span class="tag">.NET 10</span><span class="tag">ASP.NET Core</span><span class="tag">Clean Architecture</span><span class="tag">Entity Framework Core</span><span class="tag">SQLite</span><span class="tag">Health Checks</span><span class="tag">React planned</span><span class="tag">TypeScript planned</span>
+            </div>
+          </div>
+          <div class="repo-note"><span class="eyebrow">PROJECT STATUS</span><p>Backend foundation is the current focus. Core learning-platform features and the frontend remain in development.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="little-ask" class="case-study little-ask" aria-labelledby="little-ask-title">
+      <div class="case-index">
+        <span class="index-number">05</span>
+        <span class="case-status"><i class="status-dot in-progress"></i> IN DEVELOPMENT</span>
+      </div>
+      <div class="case-content">
+        <div class="case-heading">
+          <div>
+            <p class="eyebrow">FAMILY • CONNECTION • QUALITY TIME</p>
+            <h2 id="little-ask-title">Little Ask</h2>
+          </div>
+          <span class="platform-label">Mobile MVP in development</span>
+        </div>
+        <p class="case-lede">Little Ask is a parent-child bonding application centered on making it easier for children to ask their parents for shared activities and quality time. Requests are two-way, while the MVP stays focused on the core parent-child request and response experience.</p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-number">01 / ASK</span>
+            <h3>Invite connection</h3>
+            <p>Children can make approachable requests for activities such as playing a game, watching a movie, or spending time together.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">02 / RESPOND</span>
+            <h3>Two-way requests</h3>
+            <p>Parents can also initiate requests, supporting a two-way interaction while keeping the product focused on family connection.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">03 / FOCUS</span>
+            <h3>Purposeful MVP</h3>
+            <p>The initial scope prioritizes requests and responses instead of adding social feeds, chat, gamification, or calendars.</p>
+          </article>
+        </div>
+        <div class="architecture">
+          <div class="architecture-label">APPLICATION ARCHITECTURE</div>
+          <div class="architecture-flow">
+            <span>Flutter / Dart</span><b>↔</b>
+            <span>NestJS / TypeScript</span><b>↔</b>
+            <span>PostgreSQL / Docker</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="stack-block">
+            <span class="eyebrow">TECHNOLOGY</span>
+            <div class="tag-row">
+              <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">NestJS</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Feature-first structure</span><span class="tag">Clean Architecture</span>
+            </div>
+          </div>
+          <div class="repo-note"><span class="eyebrow">PROJECT STATUS</span><p>In development, with an MVP focused on parent-child activity requests and responses.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="aegis" class="case-study aegis" aria-labelledby="aegis-title">
+      <div class="case-index">
+        <span class="index-number">06</span>
+        <span class="case-status"><i class="status-dot in-progress"></i> MVP SCOPE</span>
+      </div>
+      <div class="case-content">
+        <div class="case-heading">
+          <div>
+            <p class="eyebrow">MONITORING • INCIDENTS • AUTOMATION</p>
+            <h2 id="aegis-title">AEGIS</h2>
+          </div>
+          <span class="platform-label">Ticket Automation System</span>
+        </div>
+        <p class="case-lede">AEGIS is designed to centralize application monitoring and incident management. It detects application errors, failures, and service outages, then creates categorized tickets so development and operations teams can track incidents and respond with greater visibility.</p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-number">01 / MONITOR</span>
+            <h3>Detect application issues</h3>
+            <p>Monitor applications and services for errors, failures, and outages that need attention.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">02 / AUTOMATE</span>
+            <h3>Create and classify tickets</h3>
+            <p>Automatically create an incident ticket and classify its severity when an issue is detected.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">03 / MANAGE</span>
+            <h3>Track incident status</h3>
+            <p>Provide a centralized place to manage tickets, follow incident status, and improve response visibility.</p>
+          </article>
+        </div>
+        <div class="architecture">
+          <div class="architecture-label">MVP SCOPE</div>
+          <div class="architecture-flow">
+            <span>Application &amp; service monitoring</span><b>→</b>
+            <span>Incident detection</span><b>→</b>
+            <span>Automated severity-based tickets</span><b>→</b>
+            <span>Centralized tracking</span>
+          </div>
+        </div>
+        <div class="scope-note"><strong>Future V2 direction:</strong> AI-powered incident analysis, GitHub issue and branch creation, coding-agent integration, proposed code fixes, and pull request workflows are longer-term goals—not part of the MVP.</div>
+      </div>
+    </section>
+
     <section class="closing-panel">
       <p class="eyebrow">HOW I APPROACH BUILDING</p>
       <h2>Make the system work.<br /><span>Make the details trustworthy.</span></h2>
-      <p>Across both projects, I focus on the connection between the user experience and the systems behind it: data integrity, clear responsibilities between application layers, maintainable architecture, and validating real behavior rather than assuming that a screen or build proves a feature is complete.</p>
+      <p>Across these projects, I focus on the connection between user experience and the systems behind it: clear responsibilities between application layers, maintainable architecture, and validating real behavior rather than assuming that a screen or build proves a feature is complete.</p>
     </section>
   </div>
 </BaseLayout>
@@ -227,55 +404,177 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   if (carousel) {
     const track = carousel.querySelector('.project-carousel-track');
+    const viewport = carousel.querySelector('.project-carousel-viewport');
     const slides = Array.from(track.querySelectorAll('.m-card'));
-    const pagination = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+    const pagination = carousel.querySelector('[data-carousel-pagination]');
+    const selector = carousel.querySelector('[data-project-selector]');
+    const filters = Array.from(document.querySelectorAll('[data-project-filter]'));
     const status = carousel.querySelector('[data-carousel-status]');
     const pauseButton = carousel.querySelector('[data-carousel-pause]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const names = ['PresiCompare', 'Huddle Up', 'ScholarDesk'];
-    let activeSlide = 0;
+    const names = slides.map((slide) => slide.querySelector('h2').textContent.trim());
+    const projectOrder = ['AEGIS', 'Huddle Up', 'Little Ask', 'Kokishin', 'PresiCompare', 'ScholarDesk'];
+    slides.sort((first, second) => projectOrder.indexOf(first.querySelector('h2').textContent.trim()) - projectOrder.indexOf(second.querySelector('h2').textContent.trim()));
+    slides.forEach((slide) => track.append(slide));
+    names.splice(0, names.length, ...slides.map((slide) => slide.querySelector('h2').textContent.trim()));
+    let activeSlide = Math.max(0, names.indexOf(carousel.dataset.initialProject));
+    let activeFilter = 'all';
     let rotationTimer;
     let paused = reducedMotion.matches;
+    let prependClone;
+    let appendClone;
+    let wrappingToClone = false;
+    let translateX = 0;
 
-    const showSlide = (index) => {
-      activeSlide = (index + slides.length) % slides.length;
-      track.style.transform = `translateX(-${activeSlide * 100}%)`;
+    const visibleIndexes = () => slides
+      .map((slide, index) => slide.dataset.category === activeFilter || activeFilter === 'all' ? index : -1)
+      .filter((index) => index >= 0)
+      .sort((first, second) => projectOrder.indexOf(names[first]) - projectOrder.indexOf(names[second]));
+
+    const makeProjectButton = (index, className) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = className;
+      button.dataset.projectIndex = String(index);
+      button.setAttribute('aria-label', `Show ${names[index]}`);
+      button.textContent = names[index];
+      button.addEventListener('click', () => {
+        showSlide(index);
+        startRotation();
+      });
+      return button;
+    };
+
+    const renderSelectors = () => {
+      const indexes = visibleIndexes();
+      track.querySelectorAll('.peek-clone').forEach((clone) => clone.remove());
+      prependClone = null;
+      appendClone = null;
+      slides.forEach((slide, index) => {
+        slide.hidden = !indexes.includes(index);
+      });
+      const makePeekClone = (index) => {
+        const clone = slides[index].cloneNode(true);
+        clone.classList.add('peek-clone');
+        clone.hidden = false;
+        clone.inert = true;
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelector('.btn').tabIndex = -1;
+        return clone;
+      };
+      if (indexes.length > 1) {
+        prependClone = makePeekClone(indexes[indexes.length - 1]);
+        appendClone = makePeekClone(indexes[0]);
+        track.prepend(prependClone);
+        track.append(appendClone);
+      }
+      pagination.replaceChildren();
+      selector.replaceChildren();
+
+      indexes.forEach((index) => {
+        const indicator = document.createElement('button');
+        indicator.type = 'button';
+        indicator.setAttribute('aria-label', `Show ${names[index]}`);
+        indicator.dataset.carouselSlide = String(index);
+        indicator.addEventListener('click', () => {
+          showSlide(index);
+          startRotation();
+        });
+        pagination.append(indicator);
+        selector.append(makeProjectButton(index, 'project-name-button'));
+      });
+    };
+
+    const centerCard = (card) => {
+      const viewportRect = viewport.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      const viewportCenter = viewportRect.left + viewport.clientLeft + viewport.clientWidth / 2;
+      translateX += viewportCenter - (cardRect.left + cardRect.width / 2);
+      track.style.transform = `translateX(${translateX}px)`;
+    };
+
+    const showSlide = (index, wrapDirection = 0) => {
+      const indexes = visibleIndexes();
+      activeSlide = indexes.includes(index) ? index : indexes[0];
+      wrappingToClone = wrapDirection !== 0 && !reducedMotion.matches;
 
       slides.forEach((slide, slideIndex) => {
         const inactive = slideIndex !== activeSlide;
+        slide.hidden = !indexes.includes(slideIndex);
         slide.inert = inactive;
         slide.setAttribute('aria-hidden', String(inactive));
+        slide.classList.toggle('is-featured', !inactive && !wrappingToClone);
         slide.querySelector('.btn').tabIndex = inactive ? -1 : 0;
       });
+      const targetCard = wrapDirection > 0 ? appendClone : wrapDirection < 0 ? prependClone : slides[activeSlide];
+      if (wrappingToClone && targetCard) targetCard.classList.add('is-featured');
+      else wrappingToClone = false;
+      requestAnimationFrame(() => centerCard(targetCard && wrappingToClone ? targetCard : slides[activeSlide]));
 
-      pagination.forEach((button, slideIndex) => {
-        button.setAttribute('aria-current', String(slideIndex === activeSlide));
+      pagination.querySelectorAll('[data-carousel-slide]').forEach((button) => {
+        const selected = Number(button.dataset.carouselSlide) === activeSlide;
+        button.setAttribute('aria-current', String(selected));
       });
 
-      status.textContent = `Showing ${names[activeSlide]}, project ${activeSlide + 1} of ${slides.length}.`;
+      [...selector.children].forEach((button) => {
+        const selected = Number(button.dataset.projectIndex) === activeSlide;
+        button.setAttribute('aria-current', String(selected));
+      });
+      status.textContent = `Showing ${names[activeSlide]}, ${indexes.indexOf(activeSlide) + 1} of ${indexes.length} projects.`;
     };
+
+    const moveBy = (direction) => {
+      const indexes = visibleIndexes();
+      const position = indexes.indexOf(activeSlide);
+      if (direction > 0 && position === indexes.length - 1) showSlide(indexes[0], 1);
+      else if (direction < 0 && position === 0) showSlide(indexes[indexes.length - 1], -1);
+      else showSlide(indexes[position + direction]);
+    };
+
+    track.addEventListener('transitionend', (event) => {
+      if (event.target !== track || event.propertyName !== 'transform' || !wrappingToClone) return;
+      wrappingToClone = false;
+      track.style.transition = 'none';
+      track.querySelectorAll('.is-featured').forEach((card) => card.classList.remove('is-featured'));
+      slides[activeSlide].classList.add('is-featured');
+      const activeRect = slides[activeSlide].getBoundingClientRect();
+      const viewportRect = viewport.getBoundingClientRect();
+      translateX += viewportRect.left + viewport.clientLeft + viewport.clientWidth / 2
+        - (activeRect.left + activeRect.width / 2);
+      track.style.transform = `translateX(${translateX}px)`;
+      requestAnimationFrame(() => requestAnimationFrame(() => { track.style.transition = ''; }));
+    });
 
     const stopRotation = () => window.clearInterval(rotationTimer);
     const startRotation = () => {
       stopRotation();
       if (!paused && !document.hidden && !reducedMotion.matches) {
-        rotationTimer = window.setInterval(() => showSlide(activeSlide + 1), 6000);
+        rotationTimer = window.setInterval(() => {
+          moveBy(1);
+        }, 6000);
       }
     };
 
+    const changeFilter = (filter) => {
+      activeFilter = filter;
+      filters.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.projectFilter === filter)));
+      renderSelectors();
+      const indexes = visibleIndexes();
+      if (!indexes.includes(activeSlide)) showSlide(indexes[0]);
+      else showSlide(activeSlide);
+      startRotation();
+    };
+
     carousel.querySelector('[data-carousel-previous]').addEventListener('click', () => {
-      showSlide(activeSlide - 1);
+      moveBy(-1);
       startRotation();
     });
     carousel.querySelector('[data-carousel-next]').addEventListener('click', () => {
-      showSlide(activeSlide + 1);
+      moveBy(1);
       startRotation();
     });
-    pagination.forEach((button) => {
-      button.addEventListener('click', () => {
-        showSlide(Number(button.dataset.carouselSlide));
-        startRotation();
-      });
+    filters.forEach((button) => {
+      button.addEventListener('click', () => changeFilter(button.dataset.projectFilter));
     });
     pauseButton.addEventListener('click', () => {
       paused = !paused;
@@ -298,7 +597,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       }
       startRotation();
     });
+    window.addEventListener('resize', () => {
+      translateX = 0;
+      track.style.transition = 'none';
+      track.style.transform = 'translateX(0px)';
+      requestAnimationFrame(() => {
+        centerCard(slides[activeSlide]);
+        requestAnimationFrame(() => { track.style.transition = ''; });
+      });
+    });
 
+    filters.forEach((button) => {
+      const count = slides.filter((slide) => button.dataset.projectFilter === 'all' || slide.dataset.category === button.dataset.projectFilter).length;
+      button.querySelector('[data-filter-count]').textContent = `(${count})`;
+    });
+    renderSelectors();
     showSlide(activeSlide);
     if (paused) {
       pauseButton.textContent = 'Play';
@@ -395,5 +708,42 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .case-heading h2{font-size:clamp(2.4rem,5vw,4.5rem);letter-spacing:-.065em}
   .case-index{border-right:1px solid #cdd2d7}
   .case-study .case-content{padding-bottom:10px}
+
+  .m-projects.m-projects{display:block;overflow:hidden;padding:42px 0 36px;background:#f7f8fa}
+  .projects-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin:0 auto 24px;max-width:1060px}
+  .m-projects .intro{max-width:none;padding:0;text-align:left;background:none;border:0;border-radius:0}
+  .m-projects .intro .kicker{justify-content:flex-start;margin:0 0 8px}
+  .m-projects .intro .kicker::before,.m-projects .intro .kicker::after{display:none}
+  .m-projects .intro h1{max-width:680px;margin:0;font-size:clamp(2rem,4vw,2.65rem);letter-spacing:-.045em}
+  .project-filters{display:flex;flex:0 0 auto;align-items:center;gap:4px;padding:4px;border:1px solid #d5d9de;border-radius:999px;background:#fff}
+  .project-filter{padding:9px 13px;border:0;border-radius:999px;background:transparent;color:#20242a;font-size:.73rem;white-space:nowrap;cursor:pointer}
+  .project-filter[aria-pressed="true"]{background:#10161d;color:#fff}
+  .project-filter:focus-visible,.project-name-button:focus-visible{outline:2px solid #41627a;outline-offset:3px}
+  .project-carousel{width:100%;max-width:none;margin:0 auto}
+  .project-carousel-viewport{overflow:hidden;padding:0 max(20px,calc((100% - 1060px)/2));border-radius:16px}
+  .project-carousel-track{width:max-content;gap:20px;align-items:center;transition:transform .65s cubic-bezier(.22,.61,.36,1);will-change:transform}
+  .project-carousel-track>.m-card{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);flex:0 0 min(1060px,calc(100vw - 120px));height:340px;min-height:340px;padding:0;background:#10161d;border:0;border-radius:16px;overflow:hidden;transform:scale(.88);opacity:.62;transition:transform .45s ease,opacity .45s ease,box-shadow .45s ease}
+  .project-carousel-track>.m-card.is-featured{transform:scale(1.035) translateY(-6px);opacity:1;box-shadow:0 18px 38px rgba(16,22,29,.28);z-index:1}
+  .project-carousel-track>.m-card[hidden]{display:none}
+  .project-carousel .project-card-image{width:100%;height:100%;min-height:0;aspect-ratio:auto;object-fit:cover}
+  .project-carousel .project-card-content{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:32px;background:#10161d}
+  .project-carousel .project-card-content h2{font-size:clamp(1.6rem,3vw,2.25rem);letter-spacing:-.04em}
+  .project-carousel .project-card-content p{margin:4px 0 14px;font-size:.9rem;line-height:1.55}
+  .project-carousel .project-card-content .tags{gap:7px}
+  .project-carousel .project-card-content .tags span{padding:5px 10px;font-size:.67rem}
+  .project-carousel .project-card-content .btn{margin:8px 0 0;padding:8px 0;font-size:.85rem}
+  .project-carousel-controls{margin-top:16px}
+  .carousel-arrow,.carousel-pause,.carousel-pagination button{border-color:#d2d7dc;border-radius:50%}
+  .carousel-arrow{width:36px;height:36px}
+  .carousel-pagination button{width:8px;height:8px}
+  .carousel-pagination button[aria-current="true"]{width:18px;border-radius:8px}
+  .carousel-pause{border-radius:999px;padding:8px 13px}
+  .project-name-selector{display:flex;align-items:stretch;justify-content:space-between;gap:18px;overflow-x:auto;max-width:1060px;margin:16px auto 0;padding:0 10px;border-top:1px solid #dfe2e6;border-bottom:1px solid #dfe2e6;scrollbar-width:thin}
+  .project-name-button{position:relative;flex:0 0 auto;padding:12px 18px;border:0;border-bottom:2px solid transparent;background:transparent;color:#30363d;font-size:.8rem;white-space:nowrap;cursor:pointer}
+  .project-name-button[aria-current="true"]{border-bottom-color:#10161d;font-weight:700;color:#10161d;background:#eef0f2}
+  .carousel-arrow:focus-visible,.carousel-pause:focus-visible,.carousel-pagination button:focus-visible{outline:2px solid #41627a;outline-offset:3px}
+  @media(max-width:760px){.m-projects.m-projects{padding:34px 0 30px}.projects-heading{align-items:flex-start;flex-direction:column;gap:16px;margin-inline:20px}.project-filters{max-width:100%;overflow-x:auto}.project-carousel-viewport{padding-inline:18px}.project-carousel-track{gap:16px}.project-carousel-track>.m-card{grid-template-columns:1fr;flex-basis:min(620px,calc(100vw - 72px));height:auto;min-height:0}.project-carousel .project-card-image{height:auto;aspect-ratio:16/8}.project-carousel .project-card-content{padding:22px}.project-name-selector{justify-content:flex-start;margin-inline:20px}}
+  @media(max-width:420px){.m-projects.m-projects{padding-inline:0}.projects-heading{margin-inline:14px}.project-filters{width:100%;justify-content:space-between;gap:0}.project-filter{padding:8px 9px;font-size:.67rem}.project-carousel-viewport{padding-inline:12px}.project-carousel-track>.m-card{flex-basis:calc(100vw - 48px)}.project-name-selector{margin-inline:14px}.project-carousel-controls{gap:8px}.carousel-pause{padding:7px 10px}}
+  @media(prefers-reduced-motion:reduce){.project-carousel-track,.project-carousel-track>.m-card{transition:none}}
 
 </style>
