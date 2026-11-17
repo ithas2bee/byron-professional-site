@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, Huddle Up, ScholarDesk, Kokishin, and Little Ask.">
+<BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, Huddle Up, ScholarDesk, Kokishin, Little Ask, and AEGIS.">
   <section class="m-projects" aria-label="Projects overview">
     <div class="intro">
       <p class="kicker">02 / PROJECTS</p>
@@ -11,7 +11,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="project-carousel" aria-label="Featured projects">
       <div class="project-carousel-viewport">
         <div class="project-carousel-track" style="--slide-index:0" aria-live="off">
-          <article class="m-card" aria-label="Project 1 of 5">
+          <article class="m-card" aria-label="Project 1 of 6">
             <img class="project-card-image" src="/images/presicompare.jpg" alt="PresiCompare project preview" />
             <div class="project-card-content">
               <h2>PresiCompare</h2>
@@ -20,7 +20,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#presicompare-title">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
-          <article class="m-card" aria-label="Project 2 of 5" inert aria-hidden="true">
+          <article class="m-card" aria-label="Project 2 of 6" inert aria-hidden="true">
             <img class="project-card-image" src="/images/huddle-up.jpg" alt="Huddle Up project preview" />
             <div class="project-card-content">
               <h2>Huddle Up</h2>
@@ -29,7 +29,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#huddle-up" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
-          <article class="m-card" aria-label="Project 3 of 5" inert aria-hidden="true">
+          <article class="m-card" aria-label="Project 3 of 6" inert aria-hidden="true">
             <img class="project-card-image" src="/images/scholardesk-visit.jpg" alt="ScholarDesk project preview" />
             <div class="project-card-content">
               <h2>ScholarDesk</h2>
@@ -38,7 +38,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#scholardesk" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
-          <article class="m-card" aria-label="Project 4 of 5" inert aria-hidden="true">
+          <article class="m-card" aria-label="Project 4 of 6" inert aria-hidden="true">
             <img class="project-card-image" src="/images/kokishin.jpg" alt="Kokishin teaching and learning platform preview" />
             <div class="project-card-content">
               <h2>Kokishin</h2>
@@ -47,13 +47,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#kokishin" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
-          <article class="m-card" aria-label="Project 5 of 5" inert aria-hidden="true">
+          <article class="m-card" aria-label="Project 5 of 6" inert aria-hidden="true">
             <img class="project-card-image" src="/images/little-ask.jpg" alt="Little Ask parent and child mobile app preview" />
             <div class="project-card-content">
               <h2>Little Ask</h2>
               <p>A mobile app in development to help children and parents ask each other for quality time.</p>
               <div class="tags"><span>Mobile Application</span><span>Flutter</span><span>NestJS</span></div>
               <a class="btn" href="#little-ask" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="m-card" aria-label="Project 6 of 6" inert aria-hidden="true">
+            <img class="project-card-image" src="/images/aeigis.jpg" alt="AEGIS ticket automation system preview" />
+            <div class="project-card-content">
+              <h2>AEGIS</h2>
+              <p>An application monitoring and incident management system designed to detect issues and automate ticket creation.</p>
+              <div class="tags"><span>Monitoring</span><span>Incident Management</span><span>Ticket Automation</span></div>
+              <a class="btn" href="#aegis" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>
@@ -66,11 +75,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <button type="button" aria-label="Show ScholarDesk" aria-current="false" data-carousel-slide="2"></button>
           <button type="button" aria-label="Show Kokishin" aria-current="false" data-carousel-slide="3"></button>
           <button type="button" aria-label="Show Little Ask" aria-current="false" data-carousel-slide="4"></button>
+          <button type="button" aria-label="Show AEGIS" aria-current="false" data-carousel-slide="5"></button>
         </div>
         <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next project">→</button>
         <button class="carousel-pause" type="button" data-carousel-pause aria-label="Pause automatic slide rotation">Pause</button>
       </div>
-      <p class="visually-hidden" data-carousel-status aria-live="polite">Showing PresiCompare, project 1 of 5.</p>
+      <p class="visually-hidden" data-carousel-status aria-live="polite">Showing PresiCompare, project 1 of 6.</p>
     </div>
   </section>
   <div class="projects-page">
@@ -333,6 +343,50 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </div>
           <div class="repo-note"><span class="eyebrow">PROJECT STATUS</span><p>In development, with an MVP focused on parent-child activity requests and responses.</p></div>
         </div>
+      </div>
+    </section>
+
+    <section id="aegis" class="case-study aegis" aria-labelledby="aegis-title">
+      <div class="case-index">
+        <span class="index-number">06</span>
+        <span class="case-status"><i class="status-dot in-progress"></i> MVP SCOPE</span>
+      </div>
+      <div class="case-content">
+        <div class="case-heading">
+          <div>
+            <p class="eyebrow">MONITORING • INCIDENTS • AUTOMATION</p>
+            <h2 id="aegis-title">AEGIS</h2>
+          </div>
+          <span class="platform-label">Ticket Automation System</span>
+        </div>
+        <p class="case-lede">AEGIS is designed to centralize application monitoring and incident management. It detects application errors, failures, and service outages, then creates categorized tickets so development and operations teams can track incidents and respond with greater visibility.</p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-number">01 / MONITOR</span>
+            <h3>Detect application issues</h3>
+            <p>Monitor applications and services for errors, failures, and outages that need attention.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">02 / AUTOMATE</span>
+            <h3>Create and classify tickets</h3>
+            <p>Automatically create an incident ticket and classify its severity when an issue is detected.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">03 / MANAGE</span>
+            <h3>Track incident status</h3>
+            <p>Provide a centralized place to manage tickets, follow incident status, and improve response visibility.</p>
+          </article>
+        </div>
+        <div class="architecture">
+          <div class="architecture-label">MVP SCOPE</div>
+          <div class="architecture-flow">
+            <span>Application &amp; service monitoring</span><b>→</b>
+            <span>Incident detection</span><b>→</b>
+            <span>Automated severity-based tickets</span><b>→</b>
+            <span>Centralized tracking</span>
+          </div>
+        </div>
+        <div class="scope-note"><strong>Future V2 direction:</strong> AI-powered incident analysis, GitHub issue and branch creation, coding-agent integration, proposed code fixes, and pull request workflows are longer-term goals—not part of the MVP.</div>
       </div>
     </section>
 
