@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, Huddle Up, and ScholarDesk, a local-first academic productivity desktop application.">
+<BaseLayout title="Projects | Byron David Lencrerot III" description="Software projects by Byron David Lencrerot III, including PresiCompare, Huddle Up, ScholarDesk, Kokishin, and Little Ask.">
   <section class="m-projects" aria-label="Projects overview">
     <div class="intro">
       <p class="kicker">02 / PROJECTS</p>
@@ -11,7 +11,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="project-carousel" aria-label="Featured projects">
       <div class="project-carousel-viewport">
         <div class="project-carousel-track" style="--slide-index:0" aria-live="off">
-          <article class="m-card" aria-label="Project 1 of 3">
+          <article class="m-card" aria-label="Project 1 of 5">
             <img class="project-card-image" src="/images/presicompare.jpg" alt="PresiCompare project preview" />
             <div class="project-card-content">
               <h2>PresiCompare</h2>
@@ -20,7 +20,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#presicompare-title">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
-          <article class="m-card" aria-label="Project 2 of 3" inert aria-hidden="true">
+          <article class="m-card" aria-label="Project 2 of 5" inert aria-hidden="true">
             <img class="project-card-image" src="/images/huddle-up.jpg" alt="Huddle Up project preview" />
             <div class="project-card-content">
               <h2>Huddle Up</h2>
@@ -29,13 +29,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="btn" href="#huddle-up" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
-          <article class="m-card" aria-label="Project 3 of 3" inert aria-hidden="true">
+          <article class="m-card" aria-label="Project 3 of 5" inert aria-hidden="true">
             <img class="project-card-image" src="/images/scholardesk-visit.jpg" alt="ScholarDesk project preview" />
             <div class="project-card-content">
               <h2>ScholarDesk</h2>
               <p>A local-first academic productivity desktop application for organizing coursework and research.</p>
               <div class="tags"><span>Desktop Application</span><span>Python</span><span>SQLite</span></div>
               <a class="btn" href="#scholardesk" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="m-card" aria-label="Project 4 of 5" inert aria-hidden="true">
+            <img class="project-card-image" src="/images/kokishin.jpg" alt="Kokishin teaching and learning platform preview" />
+            <div class="project-card-content">
+              <h2>Kokishin</h2>
+              <p>A teaching and learning management platform, currently establishing its backend foundation.</p>
+              <div class="tags"><span>Learning Platform</span><span>.NET 10</span><span>Clean Architecture</span></div>
+              <a class="btn" href="#kokishin" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="m-card" aria-label="Project 5 of 5" inert aria-hidden="true">
+            <img class="project-card-image" src="/images/little-ask.jpg" alt="Little Ask parent and child mobile app preview" />
+            <div class="project-card-content">
+              <h2>Little Ask</h2>
+              <p>A mobile app in development to help children and parents ask each other for quality time.</p>
+              <div class="tags"><span>Mobile Application</span><span>Flutter</span><span>NestJS</span></div>
+              <a class="btn" href="#little-ask" tabindex="-1">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>
@@ -46,11 +64,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <button type="button" aria-label="Show PresiCompare" aria-current="true" data-carousel-slide="0"></button>
           <button type="button" aria-label="Show Huddle Up" aria-current="false" data-carousel-slide="1"></button>
           <button type="button" aria-label="Show ScholarDesk" aria-current="false" data-carousel-slide="2"></button>
+          <button type="button" aria-label="Show Kokishin" aria-current="false" data-carousel-slide="3"></button>
+          <button type="button" aria-label="Show Little Ask" aria-current="false" data-carousel-slide="4"></button>
         </div>
         <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next project">→</button>
         <button class="carousel-pause" type="button" data-carousel-pause aria-label="Pause automatic slide rotation">Pause</button>
       </div>
-      <p class="visually-hidden" data-carousel-status aria-live="polite">Showing PresiCompare, project 1 of 3.</p>
+      <p class="visually-hidden" data-carousel-status aria-live="polite">Showing PresiCompare, project 1 of 5.</p>
     </div>
   </section>
   <div class="projects-page">
@@ -214,10 +234,112 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
     </section>
 
+    <section id="kokishin" class="case-study kokishin" aria-labelledby="kokishin-title">
+      <div class="case-index">
+        <span class="index-number">04</span>
+        <span class="case-status"><i class="status-dot in-progress"></i> IN DEVELOPMENT</span>
+      </div>
+      <div class="case-content">
+        <div class="case-heading">
+          <div>
+            <p class="eyebrow">TEACHING • LEARNING • COURSE MANAGEMENT</p>
+            <h2 id="kokishin-title">Kokishin</h2>
+          </div>
+          <span class="platform-label">Backend foundation in progress</span>
+        </div>
+        <p class="case-lede">Kokishin is a Canvas-inspired teaching and learning management platform for organizing courses, instructional materials, learning activities, assessments, and feedback. Development is currently focused on the backend foundation; the React and TypeScript frontend is planned, not yet presented as implemented.</p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-number">01 / ORGANIZE</span>
+            <h3>Course structure</h3>
+            <p>The platform is being designed to support organized course materials and instructional delivery for educators and learners.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">02 / ASSESS</span>
+            <h3>Learning activities</h3>
+            <p>Assessments and feedback are part of the planned teaching and learning workflow as the product develops.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">03 / ARCHITECT</span>
+            <h3>Clean Architecture</h3>
+            <p>Separate API, Application, Domain, and Infrastructure layers keep business rules independent from delivery and persistence details.</p>
+          </article>
+        </div>
+        <div class="architecture">
+          <div class="architecture-label">CURRENT TECHNICAL FOUNDATION</div>
+          <div class="architecture-flow">
+            <span>ASP.NET Core Web API</span><b>→</b>
+            <span>Application / Domain</span><b>→</b>
+            <span>EF Core / SQLite</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="stack-block">
+            <span class="eyebrow">CURRENT &amp; PLANNED TECHNOLOGY</span>
+            <div class="tag-row">
+              <span class="tag">.NET 10</span><span class="tag">ASP.NET Core</span><span class="tag">Clean Architecture</span><span class="tag">Entity Framework Core</span><span class="tag">SQLite</span><span class="tag">Health Checks</span><span class="tag">React planned</span><span class="tag">TypeScript planned</span>
+            </div>
+          </div>
+          <div class="repo-note"><span class="eyebrow">PROJECT STATUS</span><p>Backend foundation is the current focus. Core learning-platform features and the frontend remain in development.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="little-ask" class="case-study little-ask" aria-labelledby="little-ask-title">
+      <div class="case-index">
+        <span class="index-number">05</span>
+        <span class="case-status"><i class="status-dot in-progress"></i> IN DEVELOPMENT</span>
+      </div>
+      <div class="case-content">
+        <div class="case-heading">
+          <div>
+            <p class="eyebrow">FAMILY • CONNECTION • QUALITY TIME</p>
+            <h2 id="little-ask-title">Little Ask</h2>
+          </div>
+          <span class="platform-label">Mobile MVP in development</span>
+        </div>
+        <p class="case-lede">Little Ask is a parent-child bonding application centered on making it easier for children to ask their parents for shared activities and quality time. Requests are two-way, while the MVP stays focused on the core parent-child request and response experience.</p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-number">01 / ASK</span>
+            <h3>Invite connection</h3>
+            <p>Children can make approachable requests for activities such as playing a game, watching a movie, or spending time together.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">02 / RESPOND</span>
+            <h3>Two-way requests</h3>
+            <p>Parents can also initiate requests, supporting a two-way interaction while keeping the product focused on family connection.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">03 / FOCUS</span>
+            <h3>Purposeful MVP</h3>
+            <p>The initial scope prioritizes requests and responses instead of adding social feeds, chat, gamification, or calendars.</p>
+          </article>
+        </div>
+        <div class="architecture">
+          <div class="architecture-label">APPLICATION ARCHITECTURE</div>
+          <div class="architecture-flow">
+            <span>Flutter / Dart</span><b>↔</b>
+            <span>NestJS / TypeScript</span><b>↔</b>
+            <span>PostgreSQL / Docker</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="stack-block">
+            <span class="eyebrow">TECHNOLOGY</span>
+            <div class="tag-row">
+              <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">NestJS</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Feature-first structure</span><span class="tag">Clean Architecture</span>
+            </div>
+          </div>
+          <div class="repo-note"><span class="eyebrow">PROJECT STATUS</span><p>In development, with an MVP focused on parent-child activity requests and responses.</p></div>
+        </div>
+      </div>
+    </section>
+
     <section class="closing-panel">
       <p class="eyebrow">HOW I APPROACH BUILDING</p>
       <h2>Make the system work.<br /><span>Make the details trustworthy.</span></h2>
-      <p>Across both projects, I focus on the connection between the user experience and the systems behind it: data integrity, clear responsibilities between application layers, maintainable architecture, and validating real behavior rather than assuming that a screen or build proves a feature is complete.</p>
+      <p>Across these projects, I focus on the connection between user experience and the systems behind it: clear responsibilities between application layers, maintainable architecture, and validating real behavior rather than assuming that a screen or build proves a feature is complete.</p>
     </section>
   </div>
 </BaseLayout>
@@ -232,7 +354,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     const status = carousel.querySelector('[data-carousel-status]');
     const pauseButton = carousel.querySelector('[data-carousel-pause]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const names = ['PresiCompare', 'Huddle Up', 'ScholarDesk'];
+    const names = slides.map((slide) => slide.querySelector('h2').textContent.trim());
     let activeSlide = 0;
     let rotationTimer;
     let paused = reducedMotion.matches;
