@@ -531,6 +531,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       else showSlide(indexes[position + direction]);
     };
 
+    let pointerStart;
+    viewport.addEventListener('pointerdown', (event) => {
+      if (event.pointerType !== 'touch' && event.pointerType !== 'pen') return;
+      pointerStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
+    });
+    viewport.addEventListener('pointerup', (event) => {
+      if (!pointerStart || event.pointerId !== pointerStart.id) return;
+      const deltaX = event.clientX - pointerStart.x;
+      const deltaY = event.clientY - pointerStart.y;
+      pointerStart = null;
+      if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.25) return;
+      moveBy(deltaX < 0 ? 1 : -1);
+      startRotation();
+    });
+    viewport.addEventListener('pointercancel', () => { pointerStart = null; });
+
     track.addEventListener('transitionend', (event) => {
       if (event.target !== track || event.propertyName !== 'transform' || !wrappingToClone) return;
       wrappingToClone = false;
@@ -738,11 +754,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .carousel-pagination button{width:8px;height:8px}
   .carousel-pagination button[aria-current="true"]{width:18px;border-radius:8px}
   .carousel-pause{border-radius:999px;padding:8px 13px}
-  .project-name-selector{display:flex;align-items:stretch;justify-content:space-between;gap:18px;overflow-x:auto;max-width:1060px;margin:16px auto 0;padding:0 10px;border-top:1px solid #dfe2e6;border-bottom:1px solid #dfe2e6;scrollbar-width:thin}
-  .project-name-button{position:relative;flex:0 0 auto;padding:12px 18px;border:0;border-bottom:2px solid transparent;background:transparent;color:#30363d;font-size:.8rem;white-space:nowrap;cursor:pointer}
+  .project-name-selector{display:flex;flex-wrap:nowrap;align-items:stretch;justify-content:space-between;gap:18px;overflow-x:auto;max-width:1060px;margin:16px auto 0;padding:0 10px;border-top:1px solid #dfe2e6;border-bottom:1px solid #dfe2e6;scrollbar-width:thin}
+  .project-name-button{position:relative;display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;min-width:max-content;padding:12px 18px;border:0;border-bottom:2px solid transparent;background:transparent;color:#30363d;font-size:.8rem;white-space:nowrap;word-break:keep-all;cursor:pointer}
   .project-name-button[aria-current="true"]{border-bottom-color:#10161d;font-weight:700;color:#10161d;background:#eef0f2}
   .carousel-arrow:focus-visible,.carousel-pause:focus-visible,.carousel-pagination button:focus-visible{outline:2px solid #41627a;outline-offset:3px}
-  @media(max-width:760px){.m-projects.m-projects{padding:34px 0 30px}.projects-heading{align-items:flex-start;flex-direction:column;gap:16px;margin-inline:20px}.project-filters{max-width:100%;overflow-x:auto}.project-carousel-viewport{padding-inline:18px}.project-carousel-track{gap:16px}.project-carousel-track>.m-card{grid-template-columns:1fr;flex-basis:min(620px,calc(100vw - 72px));height:auto;min-height:0}.project-carousel .project-card-image{height:auto;aspect-ratio:16/8}.project-carousel .project-card-content{padding:22px}.project-name-selector{justify-content:flex-start;margin-inline:20px}}
+  @media(max-width:760px){.m-projects.m-projects{padding:34px 0 30px}.projects-heading{align-items:flex-start;flex-direction:column;gap:16px;margin-inline:20px}.project-filters{max-width:100%;overflow-x:auto}.project-carousel-viewport{padding-inline:18px;touch-action:pan-y}.project-carousel-track{gap:16px}.project-carousel-track>.m-card{grid-template-columns:1fr;flex-basis:min(620px,calc(100vw - 72px));height:auto;min-height:0}.project-carousel .project-card-image{height:auto;aspect-ratio:16/8}.project-carousel .project-card-content{padding:22px}.project-name-selector{justify-content:flex-start;margin-inline:20px;gap:16px}.project-name-button{flex:0 0 auto;white-space:nowrap}}
   @media(max-width:420px){.m-projects.m-projects{padding-inline:0}.projects-heading{margin-inline:14px}.project-filters{width:100%;justify-content:space-between;gap:0}.project-filter{padding:8px 9px;font-size:.67rem}.project-carousel-viewport{padding-inline:12px}.project-carousel-track>.m-card{flex-basis:calc(100vw - 48px)}.project-name-selector{margin-inline:14px}.project-carousel-controls{gap:8px}.carousel-pause{padding:7px 10px}}
   @media(prefers-reduced-motion:reduce){.project-carousel-track,.project-carousel-track>.m-card{transition:none}}
 
